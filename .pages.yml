@@ -123,11 +123,11 @@ content:
       - { name: philosophy_title_2, label: ② 理念｜大標第二行, type: string }
       - { name: philosophy_lead, label: ② 理念｜副標, type: string }
       - { name: philosophy_body, label: ② 理念｜內文段落（每格一段）, type: text, list: true }
-      - { name: founder_name, label: ③ 主理人｜名字, type: string }
-      - { name: founder_role, label: ③ 主理人｜職稱, type: string }
-      - { name: founder_text, label: ③ 主理人｜介紹段落（每格一段）, type: text, list: true }
+      - { name: founder_name, label: ③ 創辦人｜名字, type: string }
+      - { name: founder_role, label: ③ 創辦人｜職稱, type: string }
+      - { name: founder_text, label: ③ 創辦人｜介紹段落（每格一段）, type: text, list: true }
       - name: cofounded
-        label: ③ 主理人｜CO-FOUNDER
+        label: ③ 創辦人｜CO-FOUNDER
         type: object
         list: true
         fields:
@@ -135,7 +135,7 @@ content:
           - { name: desc, label: 說明, type: string }
           - { name: link, label: 連結（選填）, type: string }
       - name: founder_selected
-        label: ③ 主理人｜SELECTED EXPERIENCE 部分經歷
+        label: ③ 創辦人｜SELECTED EXPERIENCE 部分經歷
         type: object
         list: true
         fields:
