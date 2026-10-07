@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/base.css?v={{ build }}">
 {%- for c in css[v] %}
-<link rel="stylesheet" href="/assets/css/{{ c }}.css">
+<link rel="stylesheet" href="/assets/css/{{ c }}.css?v={{ build }}">
 {%- endfor %}
 </head>
 <body class="mebo-{{ v }}" data-reveal="{{ reveal[v] or '.rv, .m-ln, .wd, .m-gal > *' }}">
@@ -40,6 +40,6 @@
 </main>
 {% include "partials/footer.njk" %}
 </div>
-<script src="/assets/js/mebo.js" defer></script>
+<script src="/assets/js/mebo.js?v={{ build }}" defer></script>
 </body>
 </html>
