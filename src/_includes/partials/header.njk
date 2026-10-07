@@ -5,6 +5,7 @@
   ["About", "/about/", u == "/about/"],
   ["Service", "/service/", u == "/service/"],
   ["Journal", "/journal/", u.startsWith("/journal/")],
+  ["Made", "/made/", u.startsWith("/made/")],
   ["Contact", "#contact" if isHome else "/#contact", false]
 ] -%}
 <header class="m-hd" style="background: rgba(255, 255, 255, 0.78); border-bottom: 1px solid rgba(18, 48, 63, 0.08)">
