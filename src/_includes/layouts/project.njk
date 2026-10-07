@@ -28,20 +28,31 @@ layout: layouts/base.njk
 {%- endif %}
 
 {%- set blocks = [
-  ["01", "BRIEF / CONTEXT", "背景", brief or overview],
-  ["02", "PERSPECTIVE / IDEA", "觀點", perspective or approach],
-  ["03", "CREATIVE DIRECTION", "創意方向", direction],
-  ["04", "OUTCOME", "成果", outcome]
+  ["01", "BRIEF / CONTEXT", "背景", brief or overview, brief_en or overview_en],
+  ["02", "PERSPECTIVE / IDEA", "觀點", perspective or approach, perspective_en or approach_en],
+  ["03", "CREATIVE DIRECTION", "創意方向", direction, direction_en],
+  ["04", "OUTCOME", "成果", outcome, outcome_en]
 ] -%}
 {%- set filled = blocks | filledBlocks -%}
 {%- if filled.length %}
+{%- set bilingual = filled | hasBoth -%}
+<div class="m-case-wrap">
+{%- if bilingual %}
+<div class="m-langsw" role="group" aria-label="語言 Language"><button type="button" data-setlang="zh">中文</button><span aria-hidden="true">/</span><button type="button" data-setlang="en">EN</button></div>
+{%- endif %}
 <div class="m-case">
 {%- for bl in filled %}
 <div class="m-case-b">
-<div class="m-case-h"><span>{{ bl[0] }}</span><span>{{ bl[1] }}</span><span>{{ bl[2] }}</span></div>
-{%- for para in bl[3] | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}
+<div class="m-case-h"><span>{{ bl[0] }}</span><span>{{ bl[1] }}</span><span class="m-zh-only">{{ bl[2] }}</span></div>
+{%- if bl[3] and bl[4] %}
+<div class="m-lang" lang="zh-Hant" data-lang="zh">{% for para in bl[3] | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}</div>
+<div class="m-lang" lang="en" data-lang="en">{% for para in bl[4] | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}</div>
+{%- else %}
+<div>{% for para in (bl[3] or bl[4]) | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}</div>
+{%- endif %}
 </div>
 {%- endfor %}
+</div>
 </div>
 {%- endif %}
 {%- if content | trim %}
