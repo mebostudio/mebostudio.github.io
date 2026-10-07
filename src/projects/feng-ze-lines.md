@@ -1,0 +1,33 @@
+---
+title: "Feng Ze：Lines"
+category: "Art Direction"
+cover: "/assets/images/projects/feng-ze-lines.jpg"
+order: 1
+year: "2025"
+disciplines: "Art Direction, Album Design, Visual Identity, Graphic"
+hero: "/assets/images/projects/lines-01.jpg"
+overview: "邱鋒澤專輯《lines》的創意導演與視覺統籌。"
+gallery:
+  - image: "/assets/images/projects/lines-02.jpg"
+    size: "wide"
+  - image: "/assets/images/projects/feng-ze-lines.jpg"
+    size: "portrait"
+    caption: "Key Visual"
+  - image: "/assets/images/projects/lines-03.jpg"
+    size: "wide"
+  - image: "/assets/images/projects/lines-04.jpg"
+    size: "half"
+  - image: "/assets/images/projects/lines-05.jpg"
+    size: "half"
+  - image: "/assets/images/projects/lines-06.jpg"
+    size: "wide"
+  - image: "/assets/images/projects/lines-07.jpg"
+    size: "wide"
+credits:
+  - role: "Client"
+    name: "邱鋒澤"
+  - role: "Creative Direction"
+    name: "MEBO DESIGN STUDIO"
+  - role: "Art Direction"
+    name: "MEBO DESIGN STUDIO"
+---
