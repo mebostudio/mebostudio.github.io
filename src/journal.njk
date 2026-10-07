@@ -1,0 +1,65 @@
+---
+layout: layouts/base.njk
+title: Journal 設計筆記
+view: journal
+permalink: /journal/
+---
+{%- set cats = collections.articles | orderedCats(categories.journal) -%}
+{%- set first = collections.articles[0] -%}
+<!-- TITLE -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 96px clamp(20px, 4vw, 56px) 80px">
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end">
+<div style="flex: 1 1 240px">
+<div class="ld" style="font-size: 11px; letter-spacing: 0.16em; color: #5F7C88">JOURNAL</div>
+<h1 class="ld d1" style="margin: 12px 0 0; font-family: 'Noto Serif TC', serif; font-size: 40px; font-weight: 400; letter-spacing: 0.12em; line-height: 1.4">設計筆記</h1>
+</div>
+<div class="ld d2" style="flex: 3 1 560px; min-width: 0; max-width: 760px">
+<p style="margin: 0; font-size: 14px; line-height: 2.2; color: #2F4B58">關於品牌結構、視覺思考與設計實務的筆記。把專案裡的判斷、教學時整理的方法，寫成可以被閱讀、被帶走的文字。</p>
+</div>
+</div>
+</section>
+
+{%- if cats.length > 1 %}
+<!-- FILTER -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px)">
+<nav aria-label="文章分類" class="m-filters m-jfilters" data-grid=".m-jgrid" style="display: flex; flex-wrap: wrap; gap: 0 28px; border-top: 1px solid #CFE2EA; border-bottom: 1px solid #CFE2EA; padding: 12px 0; font-size: 12px; letter-spacing: 0.1em">
+<button type="button" class="m-filter" data-filter="" aria-pressed="true">All</button>
+{%- for c in cats %}
+<button type="button" class="m-filter" data-filter="{{ c | slugcat }}" aria-pressed="false">{{ c }}</button>
+{%- endfor %}
+</nav>
+</section>
+{%- endif %}
+
+<div class="m-jgrid">
+{%- if first %}
+<!-- FEATURED -->
+<section class="m-feat" style="max-width: 1440px; margin: 0 auto; padding: 72px clamp(20px, 4vw, 56px) 120px">
+<a class="m-card" data-cur="view" data-cats="{{ first.data.category | slugcat }}" href="{{ first.url }}" style="text-decoration: none; display: flex; flex-wrap: wrap; gap: 32px 56px; align-items: flex-end">
+{%- if first.data.cover %}
+<div style="flex: 3 1 560px; aspect-ratio: 16 / 10; background: #E3F1F8"><img src="{{ first.data.cover }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+{%- else %}
+<div class="wv" style="flex: 3 1 560px; aspect-ratio: 16 / 10" aria-hidden="true"></div>
+{%- endif %}
+<div style="flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; gap: 20px; font-size: 11px; letter-spacing: 0.12em; color: #4E6B78"><span>{{ first.date | ym }}</span><span>{{ first.data.category }}</span><span>{{ first.templateContent | readmin }} min</span></div>
+<span style="font-family: 'Noto Serif TC', serif; font-size: 26px; line-height: 1.7; letter-spacing: 0.08em">{{ first.data.title }}</span>
+<p style="margin: 0; font-size: 13px; line-height: 2.1; color: #2F4B58">{{ first.data.excerpt }}</p>
+<span style="align-self: flex-start; font-size: 12px; letter-spacing: 0.14em; border-bottom: 1px solid #12303F; padding: 6px 0 2px">Read</span>
+</div>
+</a>
+</section>
+{%- endif %}
+
+{%- if collections.articles.length > 1 %}
+<!-- LIST -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 140px">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 72px 32px">
+{%- for post in collections.articles %}{% if not loop.first %}
+{% set showExcerpt = true %}
+{% include "partials/card-post.njk" %}
+{%- endif %}{% endfor %}
+</div>
+</section>
+{%- endif %}
+</div>

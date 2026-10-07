@@ -1,0 +1,111 @@
+---
+layout: layouts/base.njk
+view: front
+---
+<!-- KEY VISUAL -->
+<section class="sea kvwrap" aria-label="主視覺" style="position: sticky; top: 0; z-index: 1; width: 100%; height: min(100vh, 1100px); min-height: 560px">
+<div class="arc a1" aria-hidden="true" style="left: -38%; top: -32%; width: 88%; height: 164%"></div>
+<div class="arc a2" aria-hidden="true" style="left: 28%; top: -48%; width: 98%; height: 196%"></div>
+<div class="arc a3" aria-hidden="true" style="left: -6%; top: 18%; width: 118%; height: 150%"></div>
+<div class="silk s1" aria-hidden="true"></div>
+<div class="silk s2" aria-hidden="true"></div>
+<div class="kvtxt" style="position: absolute; left: clamp(20px, 4vw, 56px); right: clamp(20px, 4vw, 56px); bottom: calc(clamp(28px, 4vw, 56px) + 28px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div>
+<h1 class="ld d1" style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(24px, 3vw, 44px); font-weight: 400; line-height: 1.6; letter-spacing: 0.14em; color: #12303F">{{ settings.kv_line1 }}<br>{{ settings.kv_line2 }}</h1>
+<p class="ld d2" style="margin: 12px 0 0; font-size: 11px; letter-spacing: 0.28em; color: #23404D">MEBO DESIGN STUDIO</p>
+</div>
+<a href="#statement" class="ld d3" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 0.24em; padding: 8px">
+<span>SCROLL</span>
+<span style="display: block; width: 1px; height: 56px; background: rgba(18, 48, 63, 0.18); position: relative; overflow: hidden"><span class="cue" style="position: absolute; inset: 0; background: #12303F"></span></span>
+</a>
+</div>
+</section>
+
+<div class="m-sheet" style="background: #FFFFFF; margin-top: -28px">
+
+<!-- STATEMENT -->
+<section id="statement" style="max-width: 1440px; margin: 0 auto; padding: 180px clamp(20px, 4vw, 56px) 180px">
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 32px 40px">
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; letter-spacing: 0.16em; color: #5F7C88">PHILOSOPHY</span>
+<span style="font-size: 12px; color: #4E6B78">理念</span>
+</div>
+<div style="flex: 3 1 560px; min-width: 0; max-width: 820px">
+<p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(28px, 3vw, 44px); line-height: 1.7; letter-spacing: 0.12em">讓想法停泊，讓美被看見</p>
+<p style="margin: 40px 0 0; font-family: 'Noto Serif TC', serif; font-size: 18px; line-height: 2.1; letter-spacing: 0.08em; color: #23404D">美泊，像是一座讓想法暫時停靠的港灣。</p>
+<p style="margin: 20px 0 0; font-size: 14px; line-height: 2.3; color: #2F4B58">品牌來到這裡，不急著立刻出發。我們陪著客戶一起梳理散落的想法、釐清方向，找到真正重要的核心，再將它整理成清晰而有辨識度的視覺。</p>
+<a class="m-ul" href="/about/" style="display: inline-block; margin-top: 40px; font-size: 12px; letter-spacing: 0.14em; padding: 6px 0">About us →</a>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 180px">
+{% include "partials/project-grid.njk" %}
+</section>
+
+<!-- SERVICE -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 180px">
+<div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
+<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
+<div style="flex: 1 1 240px">
+<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">SERVICE <span style="color: #5F7C88; font-weight: 400">／ 服務</span></h2>
+</div>
+<div style="flex: 3 1 560px; min-width: 0">
+{%- set services = [
+  ["01", "Branding", "品牌識別", "定位梳理、識別系統、規範手冊。"],
+  ["02", "Art Direction", "藝術指導", "主視覺、Campaign、專輯與節目包裝。"],
+  ["03", "Education", "教學與講座", "課程、講座、企業內訓與工作坊。"]
+] %}
+{%- for s in services %}
+<a class="m-row" href="/service/" style="text-decoration: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 32px; padding: 28px 0; border-bottom: 1px solid #E0EDF2">
+<span style="flex: 0 0 40px; font-size: 11px; color: #5F7C88; letter-spacing: 0.12em">{{ s[0] }}</span>
+<span style="flex: 1 1 220px; display: flex; align-items: baseline; gap: 16px"><span style="font-size: clamp(20px, 2vw, 26px); font-weight: 300; letter-spacing: 0.04em">{{ s[1] }}</span><span style="font-size: 13px; color: #2F4B58">{{ s[2] }}</span></span>
+<span style="flex: 1 1 240px; font-size: 12px; color: #4E6B78">{{ s[3] }}</span>
+<span class="m-ar" style="font-size: 14px">→</span>
+</a>
+{%- endfor %}
+</div>
+</div>
+</section>
+
+{% if collections.articles.length %}
+<!-- JOURNAL -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 180px">
+<div style="position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 24px; margin-bottom: 40px">
+<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
+<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">JOURNAL <span style="color: #5F7C88; font-weight: 400">／ 設計筆記</span></h2>
+<a class="m-ul" href="/journal/" style="font-size: 12px; letter-spacing: 0.14em; padding: 4px 0">All articles →</a>
+</div>
+<div class="rv" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 48px 32px">
+{%- for post in collections.articles | head(3) %}
+{% include "partials/card-post.njk" %}
+{%- endfor %}
+</div>
+</section>
+{% endif %}
+
+{% if news.items.length %}
+<!-- NEWS -->
+<section id="news" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 180px">
+<div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
+<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
+<div style="flex: 1 1 240px">
+<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">NEWS <span style="color: #5F7C88; font-weight: 400">／ 最新消息</span></h2>
+</div>
+<ul style="flex: 3 1 560px; min-width: 0; margin: 0; padding: 0; list-style: none">
+{%- for n in news.items %}
+<li class="m-row" style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 20px 0; border-bottom: 1px solid #E0EDF2">
+<span style="flex: 0 0 88px; font-size: 12px; color: #4E6B78; letter-spacing: 0.08em">{{ n.date }}</span>
+<span style="flex: 0 0 96px; font-size: 11px; color: #2A7698; letter-spacing: 0.12em">{{ n.label }}</span>
+<span style="flex: 1 1 320px; min-width: 0; font-size: 14px">{% if n.link %}<a class="m-ul" href="{{ n.link }}">{{ n.text }}</a>{% else %}{{ n.text }}{% endif %}</span>
+</li>
+{%- endfor %}
+</ul>
+</div>
+</section>
+{% endif %}
+
+{% include "partials/contact.njk" %}
+
+</div>
