@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+---
+{%- set disc = disciplines | split(",") -%}
+{%- if not disc.length and category %}{% set disc = [category] %}{% endif -%}
+<!-- TITLE -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 96px clamp(20px, 4vw, 56px) 56px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: flex-end">
+<div class="ld" style="flex: 1 1 240px; font-size: 11px; letter-spacing: 0.16em; color: #5F7C88">PROJECTS{% if year %} ／ {{ year }}{% endif %}</div>
+<div style="flex: 3 1 560px; min-width: 0">
+<h1 class="ld d1" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 300; letter-spacing: 0.04em; line-height: 1.1">{{ title }}</h1>
+{%- if disc.length %}
+<div class="ld d2" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 11px; letter-spacing: 0.12em; color: #4E6B78">
+{%- for d in disc %}<span>{{ d }}</span>{% endfor -%}
+</div>
+{%- endif %}
+</div>
+</div>
+</section>
+
+<div class="m-project" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 120px; display: flex; flex-direction: column; gap: 40px">
+{%- if hero %}
+<div class="m-hero" style="overflow: hidden"><img src="{{ hero }}" alt="{{ title }}" decoding="async" style="width: 100%; aspect-ratio: 1400 / 788; object-fit: cover; display: block; background: #E3F1F8"></div>
+{%- elif cover %}
+<div class="m-hero-cover" style="display: flex; justify-content: center"><img src="{{ cover }}" alt="{{ title }}" decoding="async" style="width: auto; max-width: 100%; max-height: 90vh; display: block; background: #E3F1F8"></div>
+{%- endif %}
+
+{%- if overview %}
+<div class="m-txt"><h2>OVERVIEW</h2><div><p>{{ overview }}</p>{% if overview_en %}<p class="en">{{ overview_en }}</p>{% endif %}</div></div>
+{%- endif %}
+{%- if approach %}
+<div class="m-txt"><h2>APPROACH</h2><div><p>{{ approach }}</p>{% if approach_en %}<p class="en">{{ approach_en }}</p>{% endif %}</div></div>
+{%- endif %}
+
+{%- if content | trim %}
+<div class="m-body m-article m-pbody">{{ content | safe }}</div>
+{%- endif %}
+
+{%- if gallery and gallery.length %}
+<div class="m-gallery">
+{%- for g in gallery %}
+{%- if g.size == "portrait" %}
+<figure class="g-portrait"><div><img src="{{ g.image }}" alt="{{ g.caption or title }}" loading="lazy" decoding="async"></div>{% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}</figure>
+{%- else %}
+<figure class="g-{{ g.size or 'wide' }}"><img src="{{ g.image }}" alt="{{ g.caption or title }}" loading="lazy" decoding="async">{% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}</figure>
+{%- endif %}
+{%- endfor %}
+</div>
+{%- endif %}
+
+{%- if credits and credits.length %}
+<div class="m-txt m-credits"><h2>CREDITS</h2>
+<dl style="margin: 0">
+{%- for c in credits %}
+<div style="display: flex; flex-wrap: wrap; gap: 0 40px; padding: 10px 0; border-bottom: 1px solid #E0EDF2; font-size: 13px"><dt style="flex: 0 0 200px; color: #4E6B78; letter-spacing: 0.08em">{{ c.role }}</dt><dd style="margin: 0">{{ c.name }}</dd></div>
+{%- endfor %}
+</dl>
+</div>
+{%- endif %}
+</div>
+
+<!-- PAGER -->
+{%- set nb = collections.projects | neighbors(page.url) %}
+<nav aria-label="專案切換" style="border-top: 1px solid #CFE2EA">
+<div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr))">
+{%- if nb.prev %}
+<a class="m-pg" href="{{ nb.prev.url }}" style="text-decoration: none; padding: 40px 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">← PREV</span>
+<span style="font-size: 15px; letter-spacing: 0.06em">{{ nb.prev.data.title }}</span>
+</a>
+{%- else %}<span></span>{% endif %}
+<a class="m-pg" href="/#projects" style="text-decoration: none; padding: 40px 0; display: flex; flex-direction: column; gap: 6px; align-items: center">
+<span style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">INDEX</span>
+<span style="font-size: 15px; letter-spacing: 0.06em">All Projects</span>
+</a>
+{%- if nb.next %}
+<a class="m-pg" href="{{ nb.next.url }}" style="text-decoration: none; padding: 40px 0; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; text-align: right">
+<span style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">NEXT →</span>
+<span style="font-size: 15px; letter-spacing: 0.06em">{{ nb.next.data.title }}</span>
+</a>
+{%- endif %}
+</div>
+</nav>

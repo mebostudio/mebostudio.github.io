@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+---
+{%- set kw = keywords | split(",") -%}
+<article>
+<!-- TITLE -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 96px clamp(20px, 4vw, 56px) 64px">
+<a href="/journal/" style="display: inline-block; font-size: 11px; letter-spacing: 0.14em; color: #4E6B78; text-decoration: none; padding: 8px 0">← JOURNAL</a>
+<div style="max-width: 860px; margin: 40px auto 0; text-align: center; display: flex; flex-direction: column; gap: 24px; align-items: center">
+<div class="ld" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; font-size: 11px; letter-spacing: 0.14em; color: #4E6B78"><span>{{ page.date | ym }}</span>{% if category %}<span>{{ category }}</span>{% endif %}<span>{{ content | readmin }} MIN READ</span></div>
+<h1 class="ld d1" style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(28px, 3.4vw, 46px); font-weight: 400; line-height: 1.7; letter-spacing: 0.1em">{{ title }}</h1>
+{%- if excerpt %}
+<p class="ld d2" style="margin: 0; font-size: 14px; line-height: 2.1; color: #2F4B58; max-width: 620px">{{ excerpt }}</p>
+{%- endif %}
+</div>
+</section>
+
+<section style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px)">
+{%- if cover %}
+<div style="aspect-ratio: 16 / 8; background: #E3F1F8; overflow: hidden"><img src="{{ cover }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+{%- else %}
+<div class="wv" style="aspect-ratio: 16 / 8" aria-hidden="true"></div>
+{%- endif %}
+</section>
+
+<!-- BODY -->
+<section class="m-body m-article" style="max-width: 720px; margin: 0 auto; padding: 96px clamp(20px, 4vw, 0px) 96px; display: flex; flex-direction: column; gap: 28px; font-size: 15px; line-height: 2.3; letter-spacing: 0.05em; color: #23404D">
+{{ content | safe }}
+{%- if kw.length %}
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 11px; letter-spacing: 0.12em; color: #4E6B78; border-top: 1px solid #CFE2EA; padding-top: 20px">
+<span>TAGS</span>{% for k in kw %}<span>#{{ k }}</span>{% endfor %}
+</div>
+{%- endif %}
+</section>
+</article>
+
+<!-- AUTHOR -->
+<section style="max-width: 720px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 0px) 120px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; border-top: 1px solid #12303F; border-bottom: 1px solid #CFE2EA; padding: 28px 0">
+<div style="width: 72px; height: 72px; flex: 0 0 72px; overflow: hidden; background: #E3F1F8"><img src="{{ settings.portrait }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1)"></div>
+<div style="flex: 1 1 280px; min-width: 0">
+<div style="font-size: 11px; letter-spacing: 0.14em; color: #5F7C88">WRITTEN BY</div>
+<div style="font-size: 15px; letter-spacing: 0.08em">美泊視覺工作室　創辦人・設計師</div>
+</div>
+<a href="/about/" style="font-size: 12px; letter-spacing: 0.14em; text-decoration: none; border-bottom: 1px solid #12303F; padding: 6px 0 2px">About</a>
+</div>
+</section>
+
+{%- set rel = collections.articles | related(page.url, category) %}
+{%- if rel.length %}
+<!-- RELATED -->
+<section style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 140px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; border-top: 1px solid #CFE2EA; padding-top: 24px; margin-bottom: 40px">
+<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">RELATED <span style="color: #5F7C88; font-weight: 400">／ 延伸閱讀</span></h2>
+<a href="/journal/" style="font-size: 12px; letter-spacing: 0.14em; text-decoration: none; border-bottom: 1px solid #12303F; padding: 4px 0 2px">All articles</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 48px 32px">
+{%- for post in rel %}
+{% set cardClass = "rv" %}{% set titleSize = 17 %}
+{% include "partials/card-post.njk" %}
+{%- endfor %}
+</div>
+</section>
+{%- endif %}
