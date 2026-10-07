@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+title: 社群視覺預覽
+view: made
+permalink: /made/ig-preview/
+excerpt: 上傳做好的貼文、Reels 或限時動態，看放上 IG 之後的樣子，檢查重要資訊會不會被介面或裁切遮住。
+---
+<div class="mk-wrap">
+<section class="mk-hero">
+<div>
+<div class="mk-kicker ld"><a class="m-ul" href="/made/" style="color: inherit; text-decoration: none">MADE</a>　/　SOCIAL PREVIEW</div>
+<h1 class="mk-h1 ld d1">社群視覺預覽</h1>
+</div>
+<div class="ld d2">
+<p class="mk-lead">做好的貼文、Reels 或限時動態，上傳前先放進來看一次。介面按鈕、文字說明和個人頁的裁切，會不會剛好擋到標題或產品？紅色區域就是容易被遮住的地方。</p>
+<p class="mk-note">圖片和影片只在你的瀏覽器裡播放，不會被上傳。</p>
+</div>
+</section>
+
+<section class="ig" id="ig">
+<div class="ig-ctrl">
+<label class="mb-drop ig-drop" id="ig-drop" for="ig-file">
+<input type="file" id="ig-file" accept="image/*,video/*" hidden>
+<b id="ig-drop-t">上傳圖片或影片</b>
+<span id="ig-drop-s">JPG、PNG、MP4、MOV 都可以，也可以直接拖進來。</span>
+</label>
+
+<div>
+<h2 class="pl-h">PLACEMENT<small>版位</small></h2>
+<div class="ig-tabs" id="ig-tabs" role="tablist"></div>
+</div>
+
+<div>
+<h2 class="pl-h">GUIDE<small>顯示</small></h2>
+<div class="ig-toggles">
+<label><input type="checkbox" id="ig-ui" checked><span>介面</span></label>
+<label><input type="checkbox" id="ig-safe" checked><span>容易被遮住的區域</span></label>
+<label><input type="checkbox" id="ig-crop" checked><span>個人頁裁切</span></label>
+</div>
+</div>
+
+<div>
+<h2 class="pl-h">POSITION<small>畫面位置</small></h2>
+<label class="mk-field"><span>上下位置</span><input type="range" class="pl-range" id="ig-py" min="0" max="100" value="50"></label>
+<label class="mk-field" style="margin-top: 10px"><span>左右位置</span><input type="range" class="pl-range" id="ig-px" min="0" max="100" value="50"></label>
+<p class="bf-save">素材比例和版位不同時，IG 會裁掉一部分，可以用這裡模擬要保留哪一塊。</p>
+</div>
+
+<div id="ig-cover-wrap" hidden>
+<h2 class="pl-h">COVER<small>封面畫格</small></h2>
+<input type="range" class="pl-range" id="ig-cover" min="0" max="1000" value="0">
+<p class="bf-save">拖動選擇封面畫面，個人頁格狀縮圖會一起更新。</p>
+</div>
+
+<div>
+<h2 class="pl-h">ACCOUNT<small>帳號名稱（只用在預覽）</small></h2>
+<input class="mk-in" id="ig-user" type="text" value="your.brand" maxlength="30">
+</div>
+</div>
+
+<div class="ig-view">
+<div class="ig-stage">
+<div class="ig-phone" id="ig-phone"><div class="ig-screen" id="ig-screen"></div></div>
+<div class="ig-grid-wrap">
+<h3 class="pl-h">PROFILE GRID<small>個人頁縮圖（3:4）</small></h3>
+<div class="ig-grid" id="ig-grid"></div>
+</div>
+</div>
+<div class="ig-info" id="ig-info"></div>
+</div>
+</section>
+</div>
+<div class="mk-toast" id="mk-toast" role="status"></div>
+<script src="/assets/js/made-ig-preview.js?v={{ build }}" defer></script>
