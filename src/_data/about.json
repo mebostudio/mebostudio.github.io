@@ -7,54 +7,115 @@
     "品牌來到這裡，不急著立刻出發。\n我們陪著客戶一起梳理散落的想法、釐清方向，找到真正重要的核心，再將它整理成清晰而有辨識度的視覺。",
     "希望每一個來到這裡的品牌，都能帶著更清晰的方向、更完整的樣貌，從這座港灣再次出航，前往更遠的地方。"
   ],
+  "founder_name": "Mebo",
+  "founder_role": "Founder / Creative Director",
+  "founder_quote": "我習慣先把事情看清楚，再決定要怎麼做。",
+  "founder_text": [
+    "MEBO 是一間獨立工作室，由我主理。這幾年做過專輯的創意統籌、品牌識別、廣告主視覺與節目包裝，也在學校和線上教設計。案子很不一樣，但做事的順序一直差不多：先聽，再整理，最後才畫。",
+    "很多時候，品牌缺的不是更多的視覺，而是一個說得清楚的方向。我花最多時間的地方，是把散落的想法整理好，找到那個「為什麼」，再讓畫面替它說話。"
+  ],
+  "founder_ways": [
+    {
+      "title": "先聽，再提案",
+      "text": "第一次見面通常不帶設計，而是帶問題。"
+    },
+    {
+      "title": "少一點，但更準",
+      "text": "能拿掉的就拿掉，留下真正需要被看見的部分。"
+    },
+    {
+      "title": "把判斷說清楚",
+      "text": "每個設計決定都有理由，過程中會一起討論，而不是最後才揭曉。"
+    }
+  ],
+  "founder_note_label": "最近在想的事",
+  "founder_note": "好的設計常常不是多加了什麼，而是清楚地決定不放什麼。",
+  "experience": [
+    {
+      "year": "2026",
+      "role": "Co-founder",
+      "text": "fromapartment",
+      "link": "https://fromapartment.com/"
+    },
+    {
+      "year": "2026",
+      "role": "Art Direction",
+      "text": "國泰世華「CUBE 日本賞再出發！」AI 美術設計",
+      "link": ""
+    },
+    {
+      "year": "2026",
+      "role": "Design",
+      "text": "fenix 單曲〈木偶人晝〉〈透明之前〉",
+      "link": ""
+    },
+    {
+      "year": "2025",
+      "role": "Creative Direction",
+      "text": "邱鋒澤 專輯《lines》創意統籌與視覺",
+      "link": "/projects/feng-ze-lines/"
+    },
+    {
+      "year": "",
+      "role": "Key Visual",
+      "text": "Louisa Coffee 20 週年主視覺",
+      "link": "/projects/louisa-coffee-20th-anniversary/"
+    },
+    {
+      "year": "",
+      "role": "Art Direction",
+      "text": "New Balance：Bloom into lightness",
+      "link": "/projects/new-balance-bloom-into-lightness/"
+    },
+    {
+      "year": "",
+      "role": "Key Visual",
+      "text": "OLAY：未說出口的話",
+      "link": "/projects/olay-unspoken-words/"
+    },
+    {
+      "year": "",
+      "role": "Brand Identity",
+      "text": "The Aveum（台星玻璃）— with Ee Branding Studio",
+      "link": "/projects/the-aveum/"
+    },
+    {
+      "year": "2021",
+      "role": "Co-founder",
+      "text": "美感研究所",
+      "link": "https://www.instagram.com/artschooool/"
+    }
+  ],
   "domain": [
     {
       "en": "Branding",
       "zh": "品牌識別",
-      "desc": "協助品牌釐清定位與視覺邏輯，建立能長期延伸、被正確使用的識別系統。",
+      "desc": "從定位開始整理，做出一套能長期使用的識別系統。",
       "points": [
-        "品牌定位梳理",
+        "定位梳理",
         "Logo・識別系統",
-        "視覺規範手冊",
-        "品牌應用設計"
+        "視覺規範手冊"
       ]
     },
     {
       "en": "Art Direction",
-      "zh": "藝術指導・製作統籌",
-      "desc": "從概念發展到製作執行的整體視覺指導，設定視覺語言、協助決策，並確保產出的一致性。",
+      "zh": "藝術指導",
+      "desc": "決定畫面的方向，並陪著製作一路到完成。",
       "points": [
         "主視覺・Campaign",
-        "專輯・單曲設計",
-        "節目視覺包裝",
-        "海報・行銷物"
+        "專輯・單曲",
+        "節目視覺包裝"
       ]
     },
     {
-      "en": "Education",
+      "en": "Design Education",
       "zh": "設計教育",
-      "desc": "以視覺思考、品牌結構與創意轉譯為主題，設計並執行課程、講座與工作坊。",
+      "desc": "把做設計時的思考方式，整理成可以學、可以練習的課。",
       "points": [
-        "大專院校課程",
-        "講座分享",
-        "企業內訓",
-        "線上課程"
+        "課程",
+        "講座",
+        "工作坊"
       ]
-    }
-  ],
-  "founder_bio": "以視覺設計與創意統籌為核心，投入品牌識別、視覺系統與溝通設計。擅長建立整體結構，將抽象、複雜的概念轉化為清晰可被理解的形式。",
-  "founder_facts": [
-    {
-      "label": "ROLE",
-      "value": "創意導演・藝術指導・品牌設計・講師"
-    },
-    {
-      "label": "CO-FOUNDED",
-      "value": "[美感研究所（2021）](https://www.instagram.com/artschooool/)、[fromapartment（2026）](https://fromapartment.com/)"
-    },
-    {
-      "label": "TEACHING",
-      "value": "Adobe 官方課程、東吳大學 T-School"
     }
   ],
   "talks": [

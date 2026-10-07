@@ -1,7 +1,7 @@
 {
-  "statement_title": "讓想法停泊，讓美被看見",
-  "statement_lead": "美泊，像是一座讓想法暫時停靠的港灣。",
-  "statement_body": "品牌來到這裡，不急著立刻出發。我們陪著客戶一起梳理散落的想法、釐清方向，找到真正重要的核心，再將它整理成清晰而有辨識度的視覺。",
+  "intro_en": "MEBO is an independent creative studio based in Taipei, working across art direction, visual identity and creative production.",
+  "intro_zh": "從想法開始，一起梳理方向，再把它轉化成清楚、有辨識度的視覺。",
+  "intro_note": "美泊，像是一座讓想法暫時停靠的港灣。",
   "services": [
     {
       "en": "Branding",
@@ -14,9 +14,9 @@
       "desc": "主視覺、Campaign、專輯與節目包裝。"
     },
     {
-      "en": "Education",
-      "zh": "教學與講座",
-      "desc": "課程、講座、企業內訓與工作坊。"
+      "en": "Design Education",
+      "zh": "設計教育",
+      "desc": "課程、講座與工作坊。"
     }
   ],
   "contact_1": "帶著想法來停泊，",
