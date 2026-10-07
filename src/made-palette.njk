@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+title: 色彩與字體搭配 Palette & Type
+view: made
+permalink: /made/palette/
+excerpt: 選幾個顏色和字體，馬上看到它們放在海報、社群貼文和網頁上的樣子，順便檢查文字好不好讀。
+---
+<div class="mk-wrap">
+<section class="mk-hero">
+<div>
+<div class="mk-kicker ld"><a class="m-ul" href="/made/" style="color: inherit; text-decoration: none">MADE</a>　/　PALETTE &amp; TYPE</div>
+<h1 class="mk-h1 ld d1">色彩與字體搭配</h1>
+</div>
+<div class="ld d2">
+<p class="mk-lead">先看看顏色和字放在一起的樣子。調整五個顏色的角色和比例、換幾種中文字體，右邊會即時套用在海報、社群貼文和網頁上，並告訴你文字夠不夠清楚。</p>
+<p class="mk-note">所有調整都在你的瀏覽器裡完成；用「複製分享連結」就能把這組搭配傳給別人。</p>
+</div>
+</section>
+
+<section class="pl" id="pl">
+<div class="pl-ctrl">
+<div>
+<h2 class="pl-h">PRESETS<small>從一組配色開始</small></h2>
+<div class="pl-presets" id="pl-presets"></div>
+</div>
+<div>
+<h2 class="pl-h">COLOR<small>顏色與角色</small></h2>
+<div id="pl-colors"></div>
+</div>
+<div>
+<h2 class="pl-h">RATIO<small>使用比例</small></h2>
+<div id="pl-ratios"></div>
+</div>
+<div>
+<h2 class="pl-h">TYPE<small>字體</small></h2>
+<div style="display: flex; flex-direction: column; gap: 18px">
+<label class="mk-field"><span>標題字體</span><select class="mk-sel" id="pl-hf"></select></label>
+<label class="mk-field"><span>內文字體</span><select class="mk-sel" id="pl-bf"></select></label>
+<label class="mk-field"><span>標題文字</span><input class="mk-in" id="pl-ht" type="text" value="讓想法停泊，讓美被看見。"></label>
+<label class="mk-field"><span>內文文字</span><textarea class="mk-ta" id="pl-bt" style="min-height: 80px">先把事情想清楚，再一起看看它最後會長成什麼樣子。</textarea></label>
+</div>
+</div>
+</div>
+
+<div class="pl-view">
+<div>
+<h2 class="pl-h">PROPORTION<small>色彩比例</small></h2>
+<div class="pl-ratio" id="pl-ratio"></div>
+</div>
+<div>
+<h2 class="pl-h">PREVIEW<small>套用示意</small></h2>
+<div class="pl-mock">
+<div class="pl-poster" id="pl-poster"><div class="dot"></div><span class="k">MEBO DESIGN STUDIO</span><div><p class="t"></p><p class="b"></p></div><div class="ft"><span>2026</span><span>TAIPEI</span></div></div>
+<div class="pl-side">
+<div class="pl-post" id="pl-post"><p class="t"></p><p class="b"></p></div>
+<div class="pl-web" id="pl-web"><div class="bar"><i></i><i></i><i></i></div><div class="pg"><p class="t"></p><p class="b"></p><span class="btn">了解更多</span></div></div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="pl-h">TYPE<small>字體搭配</small></h2>
+<div class="pl-type" id="pl-type"><div><p class="big"></p><small id="pl-hname"></small></div><div><p class="para"></p><small id="pl-bname"></small></div></div>
+</div>
+<div>
+<h2 class="pl-h">CONTRAST<small>文字好不好讀</small></h2>
+<table class="pl-cx"><thead><tr><th>組合</th><th>示意</th><th>對比</th><th>判斷</th></tr></thead><tbody id="pl-cx"></tbody></table>
+<p class="bf-save">判斷標準參考 WCAG：4.5 以上適合內文，3 以上適合大標題。</p>
+</div>
+<div>
+<h2 class="pl-h">EXPORT<small>帶走這組搭配</small></h2>
+<div class="pl-out">
+<button type="button" class="mk-btn" id="pl-png">下載色票圖 PNG</button>
+<button type="button" class="mk-btn ghost" id="pl-hex">複製色碼</button>
+<button type="button" class="mk-btn ghost" id="pl-css">複製 CSS 變數</button>
+<button type="button" class="mk-btn ghost" id="pl-link">複製分享連結</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="mk-toast" id="mk-toast" role="status"></div>
+<script src="/assets/js/made-palette.js?v={{ build }}" defer></script>

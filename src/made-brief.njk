@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: 需求整理表 Brief Note
+view: made
+permalink: /made/brief/
+excerpt: 找設計師之前，一題一題回答，把模糊的想法整理成一份可以開始聊的需求。
+---
+<div class="mk-wrap">
+<section class="mk-hero">
+<div>
+<div class="mk-kicker ld"><a class="m-ul" href="/made/" style="color: inherit; text-decoration: none">MADE</a>　/　BRIEF NOTE</div>
+<h1 class="mk-h1 ld d1">需求整理表</h1>
+</div>
+<div class="ld d2">
+<p class="mk-lead">不需要先學會怎麼寫 Brief。照著問題回答，知道多少就寫多少，最後會整理成一份可以下載、複製或直接寄出的需求單。</p>
+<p class="mk-note">填寫內容只存在你的瀏覽器裡，不會被上傳。</p>
+</div>
+</section>
+
+<section class="bf" id="bf" aria-live="polite">
+<aside class="bf-side">
+<ol class="bf-steps" id="bf-steps"></ol>
+<p class="bf-save" id="bf-save"></p>
+</aside>
+<div>
+<div class="bf-bar" aria-hidden="true"><i id="bf-bar"></i></div>
+<form id="bf-form" autocomplete="on" onsubmit="return false"></form>
+</div>
+</section>
+</div>
+<div class="mk-toast" id="mk-toast" role="status"></div>
+<script src="/assets/js/made-brief.js?v={{ build }}" defer></script>
