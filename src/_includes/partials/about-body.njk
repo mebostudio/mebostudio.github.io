@@ -70,32 +70,35 @@
 <span style="font-size: clamp(24px, 2.4vw, 32px); font-weight: 300; letter-spacing: 0.08em">{{ about.founder_name }}</span>
 <span style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">{{ about.founder_role }}</span>
 </div>
-{%- if about.founder_quote %}
-<p style="margin: 8px 0 0; font-family: 'Noto Serif TC', serif; font-size: clamp(19px, 1.7vw, 23px); line-height: 1.9; letter-spacing: 0.08em; color: #12303F">{{ about.founder_quote }}</p>
-{%- endif %}
 {%- for para in about.founder_text %}
 <p style="margin: 0; font-size: 14px; line-height: 2.2; color: #2F4B58">{{ para }}</p>
 {%- endfor %}
-{%- if about.founder_ways.length %}
-<div style="margin-top: 12px">
-<div style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em; padding-bottom: 8px; border-bottom: 1px solid #12303F">HOW I WORK</div>
-{%- for w in about.founder_ways %}
-<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 14px 0; border-bottom: 1px solid #E0EDF2">
-<span style="flex: 0 0 140px; font-size: 13px; font-weight: 500; letter-spacing: 0.06em">{{ w.title }}</span>
-<span style="flex: 1 1 220px; min-width: 0; font-size: 13px; line-height: 2; color: #2F4B58">{{ w.text }}</span>
+{%- if about.cofounded.length %}
+<div style="margin-top: 16px">
+<div style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em; padding-bottom: 8px; border-bottom: 1px solid #12303F">CO-FOUNDER</div>
+{%- for c in about.cofounded %}
+<div style="display: flex; flex-wrap: wrap; gap: 2px 24px; padding: 14px 0; border-bottom: 1px solid #E0EDF2">
+<span style="flex: 0 0 180px; font-size: 14px; letter-spacing: 0.04em">{% if c.link %}<a class="m-ul" href="{{ c.link }}" target="_blank" rel="noopener">{{ c.name }} ↗</a>{% else %}{{ c.name }}{% endif %}</span>
+<span style="flex: 1 1 220px; min-width: 0; font-size: 12px; line-height: 2; color: #4E6B78; letter-spacing: 0.04em">{{ c.desc }}</span>
 </div>
 {%- endfor %}
 </div>
 {%- endif %}
-{%- if about.founder_note %}
-<div style="margin-top: 12px; padding: 20px 24px; background: #F3FAFD; border-left: 2px solid #7CC5E6">
-<div style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">{{ about.founder_note_label }}</div>
-<p style="margin: 8px 0 0; font-family: 'Noto Serif TC', serif; font-size: 16px; line-height: 2; letter-spacing: 0.06em; color: #23404D">{{ about.founder_note }}</p>
+{%- if about.founder_selected.length %}
+<div style="margin-top: 16px">
+<div style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em; padding-bottom: 8px; border-bottom: 1px solid #12303F">SELECTED EXPERIENCE ／ 部分經歷</div>
+{%- for x in about.founder_selected %}
+<div style="display: flex; flex-wrap: wrap; gap: 2px 24px; padding: 14px 0; border-bottom: 1px solid #E0EDF2">
+<span style="flex: 0 0 180px; font-size: 14px; letter-spacing: 0.04em">{{ x.name }}</span>
+<span style="flex: 1 1 220px; min-width: 0; font-size: 12px; line-height: 2; color: #4E6B78; letter-spacing: 0.04em">{{ x.desc }}</span>
+</div>
+{%- endfor %}
 </div>
 {%- endif %}
-<div style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 12px; letter-spacing: 0.08em">
-<a class="m-ul" href="{{ settings.instagram_url }}" target="_blank" rel="noopener" style="padding: 4px 0">Instagram {{ settings.instagram_handle }} ↗</a>
-<a class="m-ul" href="mailto:{{ settings.email }}" style="padding: 4px 0">{{ settings.email }}</a>
+<div style="margin-top: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 2px 24px; padding: 14px 0; border-bottom: 1px solid #E0EDF2"><span style="flex: 0 0 180px; font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">EMAIL</span><a class="m-ul" href="mailto:{{ settings.email }}" style="font-size: 13px">{{ settings.email }}</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 2px 24px; padding: 14px 0; border-bottom: 1px solid #E0EDF2"><span style="flex: 0 0 180px; font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">INSTAGRAM</span><a class="m-ul" href="{{ settings.instagram_url }}" target="_blank" rel="noopener" style="font-size: 13px">{{ settings.instagram_handle }} ↗</a></div>
+</div>
 </div>
 </div>
 </div>
