@@ -8,6 +8,7 @@ year: "2025"
 role: "Creative Direction, Art Direction"
 hero: "/assets/images/projects/lines-01.jpg"
 brief: "邱鋒澤專輯《lines》的創意導演與視覺統籌。"
+brief_en: "Creative direction and visual coordination for Feng Ze’s album “lines”."
 gallery:
   - image: "/assets/images/projects/lines-02.jpg"
     size: "wide"

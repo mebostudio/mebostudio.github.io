@@ -5,7 +5,8 @@ category: "Brand Identity"
 cover: "/assets/images/projects/the-aveum.jpg"
 order: 4
 hero: "/assets/images/projects/the-aveum/01.jpg"
-brief: "Taixing Glass was founded in 1963, specializing in the research and manufacturing of borosilicate glass.\n\nThe brand name Aveum originates from Latin, meaning “immortal years.” It carries a classical resonance while emphasizing a spirit of timelessness and enduring elegance."
+brief: "台星玻璃創立於 1963 年，專注於高硼矽玻璃的研發與製造。\n\n品牌名稱 Aveum 源自拉丁文，意思是「永恆的歲月」。名字帶著古典的韻味，也想傳達一種不受時間影響、歷久彌新的質感。"
+brief_en: "Taixing Glass was founded in 1963, specializing in the research and manufacturing of borosilicate glass.\n\nThe brand name Aveum originates from Latin, meaning “immortal years.” It carries a classical resonance while emphasizing a spirit of timelessness and enduring elegance."
 gallery:
   - image: "/assets/images/projects/the-aveum/02.jpg"
     size: "wide"

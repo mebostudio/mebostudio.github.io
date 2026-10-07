@@ -5,7 +5,8 @@ category: "Brand Identity"
 cover: "/assets/images/projects/indiez.jpg"
 order: 12
 hero: "/assets/images/projects/indiez/01.jpg"
-brief: "IndieZ is a new generation film and television company with comprehensive production experience and resources in Taiwan.\n\nThe visual identity highlights the letter “Z”, combined with film-strip elements to express IndieZ’s independent and diverse spirit, while opening a new chapter for Generation Z in film and television."
+brief: "IndieZ 是台灣新世代的影視公司，具備完整的製作經驗與資源。\n\n識別以字母「Z」為核心，結合膠卷的元素，表現 IndieZ 獨立、多元的精神，也象徵 Z 世代在影視領域的新篇章。"
+brief_en: "IndieZ is a new generation film and television company with comprehensive production experience and resources in Taiwan.\n\nThe visual identity highlights the letter “Z”, combined with film-strip elements to express IndieZ’s independent and diverse spirit, while opening a new chapter for Generation Z in film and television."
 gallery:
   - image: "/assets/images/projects/indiez/02.jpg"
     size: "wide"
