@@ -458,3 +458,11 @@
 .mk-ill-ph2 .gr i.g1 { background: #E3F1F8; } .mk-ill-ph2 .gr i.g2 { background: #2A7698; } .mk-ill-ph2 .gr i.g3 { background: #F1F8FB; }
 .mk-ill-ph2 .gr i.g4 { background: #7CC5E6; } .mk-ill-ph2 .gr i.g5 { background: #CFE2EA; }
 .mk-ill-ph2 .img::before, .mk-ill-ph2 .img::after { background: repeating-linear-gradient(-45deg, rgba(255,255,255,.45) 0 3px, rgba(255,255,255,.12) 3px 6px); }
+/* social preview card v3: flat colour-block phone, centred */
+.mk-ill-ph3 { position: relative; height: 74%; aspect-ratio: 9 / 18; background: #12303F; border-radius: 22px; padding: 7px; box-sizing: border-box; }
+.mk-ill-ph3 .sc { position: relative; display: block; width: 100%; height: 100%; border-radius: 16px; overflow: hidden; background: #F1F8FB; }
+.mk-ill-ph3 b { position: absolute; display: block; }
+.mk-ill-ph3 .o { width: 120%; aspect-ratio: 1; border-radius: 50%; background: #7CC5E6; left: 18%; top: 22%; }
+.mk-ill-ph3 .r { left: 12%; bottom: 14%; width: 44%; height: 22%; background: #FFFFFF; }
+.mk-ill-ph3 .l1 { left: 12%; top: 9%; width: 52%; height: 4%; background: #12303F; }
+.mk-ill-ph3 .l2 { left: 12%; top: 16%; width: 30%; height: 2.5%; background: #2A7698; }
