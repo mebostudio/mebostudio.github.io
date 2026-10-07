@@ -8,7 +8,9 @@
     var saved = null;
     try { saved = localStorage.getItem('mebo-lang'); } catch (e) {}
     var langs = navigator.languages || [navigator.language || ''];
-    var auto = langs.some(function (l) { return /^zh/i.test(l || ''); }) ? 'zh' : 'en';
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    var auto = (langs.some(function (l) { return /^zh/i.test(l || ''); }) || /^Asia\/(Taipei|Hong_Kong|Macau|Shanghai)$/.test(tz)) ? 'zh' : 'en';
     var set = function (l) { root.dataset.lang = l; };
     set(saved || auto);
     document.querySelectorAll('[data-setlang]').forEach(function (b) {
