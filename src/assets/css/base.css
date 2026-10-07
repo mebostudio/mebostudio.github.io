@@ -100,3 +100,8 @@ img { max-width: 100%; height: auto; }
 .m-filter[aria-pressed="true"]{border-bottom-color:#12303F;color:#12303F}
 .m-jfilters .m-filter{padding:6px 0}
 [data-cats][hidden],.m-feat[hidden]{display:none!important}
+
+/* Article section headings: small wave mark instead of numbers */
+.m-article.m-body h2 { margin-top: 48px; display: flex; flex-direction: column; gap: 14px; }
+.m-article.m-body h2::before { content: ""; width: 34px; height: 8px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 8'%3E%3Cpath d='M1 4c4-4 6-4 8 0s4 4 8 0 4-4 8 0 4 4 8 0' fill='none' stroke='%237CC5E6' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 0 50% / contain; }
+.m-article.m-body mark { color: inherit; background: linear-gradient(transparent 58%, #BFE1F0 58%); padding: 0 2px; }
