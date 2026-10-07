@@ -53,6 +53,7 @@ export default function (eleventyConfig) {
     return esc(s || "").replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, (m, t, u) => `<a class="m-ul" href="${u}" target="_blank" rel="noopener">${t}</a>`);
   });
   eleventyConfig.addFilter("paras", (s) => String(s || "").split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean));
+  eleventyConfig.addFilter("filledBlocks", (bs) => (bs || []).filter((b) => b[3] && String(b[3]).trim()));
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
   return {
