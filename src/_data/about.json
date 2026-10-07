@@ -9,28 +9,18 @@
   ],
   "founder_name": "Mebo",
   "founder_role": "Founder / Creative Director",
-  "founder_quote": "我習慣先把事情看清楚，再決定要怎麼做。",
   "founder_text": [
-    "MEBO 是一間獨立工作室，由我主理。這幾年做過專輯的創意統籌、品牌識別、廣告主視覺與節目包裝，也在學校和線上教設計。案子很不一樣，但做事的順序一直差不多：先聽，再整理，最後才畫。",
-    "很多時候，品牌缺的不是更多的視覺，而是一個說得清楚的方向。我花最多時間的地方，是把散落的想法整理好，找到那個「為什麼」，再讓畫面替它說話。"
+    "以視覺設計與創意統籌為核心，工作橫跨品牌識別、Art Direction、Campaign Visual 與內容企劃。",
+    "過去參與過品牌、音樂、影視與文化相關專案，從一開始專注在畫面，到現在更常參與前期的概念梳理、創意方向與整體視覺規劃。比起先決定「要做什麼」，我更在意每個專案真正想說的是什麼，以及什麼樣的方式最適合它。",
+    "目前以 MEBO DESIGN STUDIO 持續和不同領域的品牌與創作者合作，也透過課程、講座與文字，分享工作中累積的觀察與方法。"
   ],
-  "founder_ways": [
-    {
-      "title": "先聽，再提案",
-      "text": "第一次見面通常不帶設計，而是帶問題。"
-    },
-    {
-      "title": "少一點，但更準",
-      "text": "能拿掉的就拿掉，留下真正需要被看見的部分。"
-    },
-    {
-      "title": "把判斷說清楚",
-      "text": "每個設計決定都有理由，過程中會一起討論，而不是最後才揭曉。"
-    }
-  ],
-  "founder_note_label": "最近在想的事",
-  "founder_note": "好的設計常常不是多加了什麼，而是清楚地決定不放什麼。",
   "experience": [
+    {
+      "year": "2026",
+      "role": "Key Visual",
+      "text": "Louisa Coffee 20 週年主視覺",
+      "link": "/projects/louisa-coffee-20th-anniversary/"
+    },
     {
       "year": "2026",
       "role": "Co-founder",
@@ -56,28 +46,28 @@
       "link": "/projects/feng-ze-lines/"
     },
     {
-      "year": "",
-      "role": "Key Visual",
-      "text": "Louisa Coffee 20 週年主視覺",
-      "link": "/projects/louisa-coffee-20th-anniversary/"
-    },
-    {
-      "year": "",
+      "year": "2025",
       "role": "Art Direction",
       "text": "New Balance：Bloom into lightness",
       "link": "/projects/new-balance-bloom-into-lightness/"
     },
     {
-      "year": "",
+      "year": "2025",
       "role": "Key Visual",
       "text": "OLAY：未說出口的話",
       "link": "/projects/olay-unspoken-words/"
     },
     {
-      "year": "",
+      "year": "2025",
       "role": "Brand Identity",
       "text": "The Aveum（台星玻璃）— with Ee Branding Studio",
       "link": "/projects/the-aveum/"
+    },
+    {
+      "year": "2025",
+      "role": "Visual Direction",
+      "text": "百分之一相對論 節目視覺統籌設計",
+      "link": ""
     },
     {
       "year": "2021",
@@ -151,5 +141,39 @@
     }
   ],
   "contact_1": "帶著想法來停泊，",
-  "contact_2": "一起找到出航的方向。"
+  "contact_2": "一起找到出航的方向。",
+  "cofounded": [
+    {
+      "name": "Artschooool",
+      "desc": "Design Education / Creative Community",
+      "link": "https://www.instagram.com/artschooool/"
+    },
+    {
+      "name": "fromapartment",
+      "desc": "Independent Media / Creative & Lifestyle",
+      "link": "https://fromapartment.com/"
+    }
+  ],
+  "founder_selected": [
+    {
+      "name": "LOUISA COFFEE",
+      "desc": "20th Anniversary — Visual Design / Key Visual"
+    },
+    {
+      "name": "New Balance",
+      "desc": "Bloom into Lightness — Art Direction / Visual Design"
+    },
+    {
+      "name": "邱鋒澤 FENG ZE",
+      "desc": "《LINES》Album — Creative Direction / Visual Direction"
+    },
+    {
+      "name": "Film & Entertainment",
+      "desc": "影視、音樂與節目視覺 — Key Visual / Poster / Show Packaging"
+    },
+    {
+      "name": "Brand & Campaign",
+      "desc": "品牌識別與整合視覺 — Brand Identity / Art Direction / Campaign Visual"
+    }
+  ]
 }
