@@ -3,17 +3,19 @@ layout: layouts/base.njk
 ---
 {%- set disc = disciplines | split(",") -%}
 {%- if not disc.length and category %}{% set disc = [category] %}{% endif -%}
+{%- set roleText = role or disciplines -%}
+{%- set meta = [["CLIENT", client], ["YEAR", year], ["ROLE", roleText], ["CATEGORY", category]] -%}
 <!-- TITLE -->
 <section style="max-width: 1440px; margin: 0 auto; padding: 96px clamp(20px, 4vw, 56px) 56px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: flex-end">
-<div class="ld" style="flex: 1 1 240px; font-size: 11px; letter-spacing: 0.16em; color: #5F7C88">PROJECTS{% if year %} ／ {{ year }}{% endif %}</div>
+<div class="ld" style="flex: 1 1 240px; font-size: 11px; letter-spacing: 0.16em; color: #5F7C88">PROJECTS</div>
 <div style="flex: 3 1 560px; min-width: 0">
 <h1 class="ld d1" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 300; letter-spacing: 0.04em; line-height: 1.1">{{ title }}</h1>
-{%- if disc.length %}
-<div class="ld d2" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 11px; letter-spacing: 0.12em; color: #4E6B78">
-{%- for d in disc %}<span>{{ d }}</span>{% endfor -%}
-</div>
-{%- endif %}
+<dl class="ld d2 m-meta" style="margin: 32px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px 32px; border-top: 1px solid #CFE2EA; padding-top: 16px">
+{%- for m in meta %}{% if m[1] %}
+<div><dt style="font-size: 10px; letter-spacing: 0.16em; color: #5F7C88">{{ m[0] }}</dt><dd style="margin: 4px 0 0; font-size: 13px; letter-spacing: 0.04em">{{ m[1] }}</dd></div>
+{%- endif %}{% endfor %}
+</dl>
 </div>
 </div>
 </section>
@@ -25,13 +27,23 @@ layout: layouts/base.njk
 <div class="m-hero-cover" style="display: flex; justify-content: center"><img src="{{ cover }}" alt="{{ title }}" decoding="async" style="width: auto; max-width: 100%; max-height: 90vh; display: block; background: #E3F1F8"></div>
 {%- endif %}
 
-{%- if overview %}
-<div class="m-txt"><h2>OVERVIEW</h2><div>{% for para in overview | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}{% if overview_en %}<p class="en">{{ overview_en }}</p>{% endif %}</div></div>
+{%- set blocks = [
+  ["01", "BRIEF / CONTEXT", "背景", brief or overview],
+  ["02", "PERSPECTIVE / IDEA", "觀點", perspective or approach],
+  ["03", "CREATIVE DIRECTION", "創意方向", direction],
+  ["04", "OUTCOME", "成果", outcome]
+] -%}
+{%- set filled = blocks | filledBlocks -%}
+{%- if filled.length %}
+<div class="m-case">
+{%- for bl in filled %}
+<div class="m-case-b">
+<div class="m-case-h"><span>{{ bl[0] }}</span><span>{{ bl[1] }}</span><span>{{ bl[2] }}</span></div>
+{%- for para in bl[3] | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}
+</div>
+{%- endfor %}
+</div>
 {%- endif %}
-{%- if approach %}
-<div class="m-txt"><h2>APPROACH</h2><div>{% for para in approach | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}{% if approach_en %}<p class="en">{{ approach_en }}</p>{% endif %}</div></div>
-{%- endif %}
-
 {%- if content | trim %}
 <div class="m-body m-article m-pbody">{{ content | safe }}</div>
 {%- endif %}
