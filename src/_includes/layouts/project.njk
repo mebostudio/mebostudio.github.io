@@ -26,10 +26,10 @@ layout: layouts/base.njk
 {%- endif %}
 
 {%- if overview %}
-<div class="m-txt"><h2>OVERVIEW</h2><div><p>{{ overview }}</p>{% if overview_en %}<p class="en">{{ overview_en }}</p>{% endif %}</div></div>
+<div class="m-txt"><h2>OVERVIEW</h2><div>{% for para in overview | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}{% if overview_en %}<p class="en">{{ overview_en }}</p>{% endif %}</div></div>
 {%- endif %}
 {%- if approach %}
-<div class="m-txt"><h2>APPROACH</h2><div><p>{{ approach }}</p>{% if approach_en %}<p class="en">{{ approach_en }}</p>{% endif %}</div></div>
+<div class="m-txt"><h2>APPROACH</h2><div>{% for para in approach | paras %}<p>{{ para | nl2br | safe }}</p>{% endfor %}{% if approach_en %}<p class="en">{{ approach_en }}</p>{% endif %}</div></div>
 {%- endif %}
 
 {%- if content | trim %}
