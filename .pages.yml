@@ -1,7 +1,7 @@
 # Pages CMS (https://app.pagescms.org) — 網站內容編輯設定
 media:
-  input: src/uploads
-  output: /uploads
+  input: src/assets/images
+  output: /assets/images
 
 content:
   - name: projects
@@ -13,6 +13,9 @@ content:
       fields: [title, category, order]
       primary: title
       sort: [order, title]
+      default:
+        sort: order
+        order: asc
     fields:
       - { name: title, label: 作品名稱, type: string, required: true }
       - name: category
@@ -82,6 +85,131 @@ content:
       - { name: keywords, label: 標籤（以逗號分隔）, type: string }
       - { name: draft, label: 草稿（勾選則不顯示在網站）, type: boolean }
       - { name: body, label: 內文, type: rich-text }
+
+  # ───────────── 頁面文字（網頁上由上到下的順序） ─────────────
+  - name: page-home
+    label: 頁面文字｜首頁
+    type: file
+    path: src/_data/home.json
+    format: json
+    fields:
+      - { name: statement_title, label: ① 理念 PHILOSOPHY｜大標, type: string }
+      - { name: statement_lead, label: ① 理念｜副標, type: string }
+      - { name: statement_body, label: ① 理念｜內文, type: text }
+      - name: services
+        label: ② 服務 SERVICE｜三項服務（編號自動產生）
+        type: object
+        list: true
+        fields:
+          - { name: en, label: 英文名稱, type: string }
+          - { name: zh, label: 中文名稱, type: string }
+          - { name: desc, label: 一句說明, type: string }
+      - { name: contact_1, label: ③ 聯絡 CONTACT｜大字第一行, type: string }
+      - { name: contact_2, label: ③ 聯絡｜大字第二行, type: string }
+
+  - name: page-about
+    label: 頁面文字｜About
+    type: file
+    path: src/_data/about.json
+    format: json
+    fields:
+      - { name: title, label: ① 頁面大標, type: string }
+      - { name: philosophy_title_1, label: ② 理念 PHILOSOPHY｜大標第一行, type: string }
+      - { name: philosophy_title_2, label: ② 理念｜大標第二行, type: string }
+      - { name: philosophy_lead, label: ② 理念｜副標, type: string }
+      - { name: philosophy_body, label: ② 理念｜內文段落（每格一段）, type: text, list: true }
+      - name: domain
+        label: ③ 業務範圍 WHAT WE DO
+        type: object
+        list: true
+        fields:
+          - { name: en, label: 英文名稱, type: string }
+          - { name: zh, label: 中文名稱, type: string }
+          - { name: desc, label: 說明, type: text }
+          - { name: points, label: 項目（每格一項）, type: string, list: true }
+      - { name: founder_bio, label: ⑤ 創辦人 FOUNDER｜自我介紹, type: text }
+      - name: founder_facts
+        label: ⑤ 創辦人｜資料列（IG 和 Email 會自動接在最後）
+        type: object
+        list: true
+        fields:
+          - { name: label, label: 標題（例：ROLE）, type: string }
+          - { name: value, label: 內容, type: string }
+      - name: talks
+        label: ⑥ 講座・教學・專訪 TALKS & PRESS
+        type: object
+        list: true
+        fields:
+          - { name: year, label: 年份, type: string }
+          - { name: type, label: 類別（例：LECTURE / TALK / INTERVIEW）, type: string }
+          - { name: text, label: 內容, type: string }
+      - { name: contact_1, label: ⑦ 頁尾聯絡大字第一行, type: string }
+      - { name: contact_2, label: ⑦ 頁尾聯絡大字第二行, type: string }
+
+  - name: page-service
+    label: 頁面文字｜Service
+    type: file
+    path: src/_data/service.json
+    format: json
+    fields:
+      - { name: title, label: ① 頁面大標, type: string }
+      - { name: lead, label: ① 頁面說明, type: text }
+      - name: services
+        label: ② 服務項目（編號自動產生）
+        type: object
+        list: true
+        fields:
+          - { name: name_en, label: 英文名稱（大寫）, type: string }
+          - { name: name_zh, label: 中文名稱, type: string }
+          - { name: image, label: 圖片（4:3）, type: image }
+          - { name: headline, label: 標語, type: string }
+          - { name: body, label: 說明, type: text }
+          - { name: deliverables, label: DELIVERABLES 交付項目（每格一項）, type: string, list: true }
+          - { name: cases, label: CASE 案例（以頓號分隔）, type: string }
+      - name: engagement
+        label: ④ 合作形式 ENGAGEMENT
+        type: object
+        list: true
+        fields:
+          - { name: name, label: 中文名稱, type: string }
+          - { name: en, label: 英文, type: string }
+          - { name: desc, label: 說明, type: text }
+      - name: faq
+        label: ⑤ 常見問題 FAQ（回答留空的題目不會顯示）
+        type: object
+        list: true
+        fields:
+          - { name: q, label: 問題, type: string }
+          - { name: a, label: 回答, type: text }
+      - { name: contact_1, label: ⑥ 頁尾聯絡大字第一行, type: string }
+      - { name: contact_2, label: ⑥ 頁尾聯絡大字第二行, type: string }
+
+  - name: page-process
+    label: 頁面文字｜合作流程（About 與 Service 共用）
+    type: file
+    path: src/_data/process.json
+    format: json
+    fields:
+      - { name: intro, label: 流程說明, type: text }
+      - name: phases
+        label: 階段（步驟編號自動產生）
+        type: object
+        list: true
+        fields:
+          - { name: name, label: 階段名稱（例：需求確認）, type: string }
+          - { name: label_en, label: 英文（例：BRIEF）, type: string }
+          - { name: desc, label: 階段說明, type: string }
+          - { name: note, label: 備註（選填，例：依回饋往返修正）, type: string }
+          - name: steps
+            label: 步驟
+            type: object
+            list: true
+            fields:
+              - { name: name, label: 步驟名稱, type: string }
+              - { name: en, label: 英文, type: string }
+              - { name: summary, label: 說明, type: string }
+              - { name: from_you, label: 需要你準備 FROM YOU, type: text }
+              - { name: you_receive, label: 你會收到 YOU RECEIVE, type: text }
 
   - name: news
     label: 最新消息

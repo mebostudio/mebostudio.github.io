@@ -46,6 +46,7 @@ export default function (eleventyConfig) {
     return [...same, ...others.filter((p) => !same.includes(p))].slice(0, n);
   });
   eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
+  eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
   return {
