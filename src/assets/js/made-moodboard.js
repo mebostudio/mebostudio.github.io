@@ -297,17 +297,20 @@
   function loadExample() {
     var host = $('mb-example'); if (!host) return;
     var list = [], left = EX.length;
+    var done = function () {
+      if (--left > 0) return;
+      var ok = list.filter(Boolean); if (!ok.length) { host.style.display = 'none'; return; }
+      var d = directionOf(ok); d.name = 'Quiet / Editorial / Human';
+      host.innerHTML = boardHTML(boardSpec(d, 0, 'MEBO 範例'));
+    };
     EX.forEach(function (e, k) {
       var img = new Image();
       img.onload = function () {
         var a = analyze(img), ct = colorTags(a);
         list[k] = { img: img, url: img.src, a: a, tags: { temp: ct.temp, contrast: ct.contrast, sat: ct.sat, image: e[1], type: e[2], layout: e[3] } };
-        if (--left === 0) {
-          var d = directionOf(list.filter(Boolean)); d.name = 'Quiet / Editorial / Human';
-          host.innerHTML = boardHTML(boardSpec(d, 0, 'MEBO 範例'));
-        }
+        done();
       };
-      img.onerror = function () { left--; };
+      img.onerror = function () { done(); };
       img.src = '/assets/images/projects/' + e[0] + '.jpg';
     });
   }
