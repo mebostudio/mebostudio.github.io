@@ -3,6 +3,22 @@
   var root = document.documentElement;
   var body = document.body;
 
+  /* ---------- Language: Chinese by default, English for non-Chinese browsers ---------- */
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('mebo-lang'); } catch (e) {}
+    var langs = navigator.languages || [navigator.language || ''];
+    var auto = langs.some(function (l) { return /^zh/i.test(l || ''); }) ? 'zh' : 'en';
+    var set = function (l) { root.dataset.lang = l; };
+    set(saved || auto);
+    document.querySelectorAll('[data-setlang]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var l = b.getAttribute('data-setlang'); set(l);
+        try { localStorage.setItem('mebo-lang', l); } catch (e) {}
+      });
+    });
+  })();
+
   /* ---------- Category filters (projects grid, journal list) ---------- */
   document.querySelectorAll('.m-filters').forEach(function (nav) {
     var scope = document.querySelector(nav.getAttribute('data-grid') || '.m-pgrid');
