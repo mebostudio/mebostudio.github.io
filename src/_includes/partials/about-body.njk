@@ -95,7 +95,7 @@
 {%- for f in about.founder_facts %}
 <div style="display: flex; flex-wrap: wrap; gap: 0 32px; padding: 12px 0; border-bottom: 1px solid #E0EDF2; font-size: 12px">
 <dt style="flex: 0 0 120px; color: #4E6B78; letter-spacing: 0.1em">{{ f.label }}</dt>
-<dd style="margin: 0">{{ f.value }}</dd>
+<dd style="margin: 0">{{ f.value | mdlinks | safe }}</dd>
 </div>
 {%- endfor %}
 <div style="display: flex; flex-wrap: wrap; gap: 0 32px; padding: 12px 0; border-bottom: 1px solid #E0EDF2; font-size: 12px">
@@ -124,7 +124,7 @@
 <li class="m-row" style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-bottom: 1px solid #E0EDF2">
 <span style="flex: 0 0 64px; font-size: 12px; color: #4E6B78; letter-spacing: 0.08em">{{ t.year }}</span>
 <span style="flex: 0 0 96px; font-size: 11px; color: #2A7698; letter-spacing: 0.12em">{{ t.type }}</span>
-<span style="flex: 1 1 320px; min-width: 0; font-size: 13px">{{ t.text }}</span>
+<span style="flex: 1 1 320px; min-width: 0; font-size: 13px">{% if t.link %}<a class="m-ul" href="{{ t.link }}" target="_blank" rel="noopener">{{ t.text }} ↗</a>{% else %}{{ t.text }}{% endif %}</span>
 </li>
 {%- endfor %}
 </ul>
