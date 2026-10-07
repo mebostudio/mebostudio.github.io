@@ -30,9 +30,13 @@ content:
       - { name: role, label: ROLE 負責角色（例：Creative Direction, Art Direction）, type: string }
       - { name: hero, label: 內頁主視覺（橫式大圖，選填）, type: image }
       - { name: brief, label: 01 BRIEF / CONTEXT｜這個專案原本需要解決什麼？（50–150 字）, type: text }
+      - { name: brief_en, label: 01 BRIEF｜英文版（外國訪客會看到；留空則顯示中文）, type: text }
       - { name: perspective, label: 02 PERSPECTIVE / IDEA｜我怎麼理解這個問題、找到什麼核心觀點？, type: text }
+      - { name: perspective_en, label: 02 PERSPECTIVE｜英文版（外國訪客會看到；留空則顯示中文）, type: text }
       - { name: direction, label: 03 CREATIVE DIRECTION｜觀點如何變成視覺方向、系統、攝影、字體、色彩或製作？, type: text }
+      - { name: direction_en, label: 03 CREATIVE DIRECTION｜英文版（外國訪客會看到；留空則顯示中文）, type: text }
       - { name: outcome, label: 04 OUTCOME｜最後如何被實際應用？, type: text }
+      - { name: outcome_en, label: 04 OUTCOME｜英文版（外國訪客會看到；留空則顯示中文）, type: text }
       - name: gallery
         label: 作品圖片
         type: object
