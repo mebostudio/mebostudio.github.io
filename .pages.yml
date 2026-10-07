@@ -134,7 +134,7 @@ content:
         list: true
         fields:
           - { name: label, label: 標題（例：ROLE）, type: string }
-          - { name: value, label: 內容, type: string }
+          - { name: value, label: 內容（加連結寫法：[文字](網址)）, type: string }
       - name: talks
         label: ⑥ 講座・教學・專訪 TALKS & PRESS
         type: object
@@ -143,6 +143,7 @@ content:
           - { name: year, label: 年份, type: string }
           - { name: type, label: 類別（例：LECTURE / TALK / INTERVIEW）, type: string }
           - { name: text, label: 內容, type: string }
+          - { name: link, label: 連結（選填）, type: string }
       - { name: contact_1, label: ⑦ 頁尾聯絡大字第一行, type: string }
       - { name: contact_2, label: ⑦ 頁尾聯絡大字第二行, type: string }
 
@@ -242,3 +243,4 @@ content:
       - { name: instagram_url, label: Instagram 網址, type: string }
       - { name: instagram_handle, label: Instagram 顯示文字, type: string }
       - { name: portrait, label: 創辦人照片, type: image }
+      - { name: journal_intro, label: 設計筆記頁的介紹文字, type: text }

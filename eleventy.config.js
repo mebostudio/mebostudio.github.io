@@ -47,6 +47,12 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
+  // "[text](https://…)" → link (used in editable page texts)
+  eleventyConfig.addFilter("mdlinks", (s) => {
+    const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return esc(s || "").replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, (m, t, u) => `<a class="m-ul" href="${u}" target="_blank" rel="noopener">${t}</a>`);
+  });
+  eleventyConfig.addFilter("paras", (s) => String(s || "").split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean));
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
   return {
