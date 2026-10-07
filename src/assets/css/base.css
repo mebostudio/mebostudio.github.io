@@ -105,7 +105,7 @@ img { max-width: 100%; height: auto; }
 .m-article.m-body { gap: 0 !important; color: #2F4B58; }
 .m-article.m-body > * + * { margin-top: 22px; }
 .m-article.m-body > p:first-child { font-family: 'Noto Serif TC', serif; font-size: 17px; line-height: 2.2; color: #12303F; letter-spacing: 0.06em; }
-.m-article.m-body h2 { margin: 96px 0 0 !important; font-family: 'Noto Serif TC', serif; font-size: clamp(22px, 2.2vw, 27px); font-weight: 500; line-height: 2; letter-spacing: 0.1em; color: #12303F; text-decoration: underline wavy #7CC5E6; text-decoration-thickness: 1.5px; text-underline-offset: 12px; text-decoration-skip-ink: none; }
+.m-article.m-body h2 { margin: 96px 0 0 !important; align-self: flex-start; padding-bottom: 16px; font-family: 'Noto Serif TC', serif; font-size: clamp(22px, 2.2vw, 27px); font-weight: 500; line-height: 2; letter-spacing: 0.1em; color: #12303F; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='10' viewBox='0 0 28 10'%3E%3Cpath d='M0 5 Q7 0 14 5 T28 5' fill='none' stroke='%237CC5E6' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x left bottom / 28px 10px; }
 .m-article.m-body h2 + * { margin-top: 40px !important; }
 .m-article.m-body h3 { margin-top: 56px !important; font-size: 18px; font-weight: 500; color: #12303F; }
 .m-article.m-body h3 + * { margin-top: 16px !important; }
@@ -114,3 +114,6 @@ img { max-width: 100%; height: auto; }
 .m-article.m-body mark { color: #12303F; font-weight: 500; background-color: transparent; background-image: linear-gradient(transparent 56%, #C4E5F4 56%); padding: 0 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .m-article.m-body strong { color: #12303F; font-weight: 500; }
 @media (max-width: 640px) { .m-article.m-body h2 { margin-top: 72px !important; } .m-article.m-body blockquote { padding: 20px 22px; } }
+/* Question + answer pairs (bold first line) read as a light checklist */
+.m-article.m-body p:has(> strong:first-child) { padding-left: 20px; border-left: 2px solid #CDEAF6; }
+.m-article.m-body p > strong:first-child { font-family: 'Noto Serif TC', serif; font-size: 16px; letter-spacing: 0.08em; }
