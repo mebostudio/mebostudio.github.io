@@ -25,7 +25,12 @@
     more: '<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg>',
     music: '<svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></svg>',
     cam: '<svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l2-3h4l2 3"/></svg>',
-    rep: '<svg viewBox="0 0 24 24"><path d="M4 9h13l-3-3M20 15H7l3 3"/></svg>'
+    rep: '<svg viewBox="0 0 24 24"><path d="M4 9h13l-3-3M20 15H7l3 3"/></svg>',
+    plus: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></svg>',
+    menu: '<svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+    grid: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/></svg>',
+    reel: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M4 9h16M9 4l2 5M14 4l2 5M10.5 12.5v4l3.5-2z"/></svg>',
+    tag: '<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="10.5" r="2.5"/><path d="M7.5 18c1-2.3 2.6-3.4 4.5-3.4s3.5 1.1 4.5 3.4"/></svg>'
   };
 
   var mode = MODES[1], media = null; // {type:'image'|'video', url, w, h, dur}
@@ -73,11 +78,24 @@
       scr.innerHTML = '<div class="ig-frame full">' + mediaEl() + overlays() +
         (ui ? '<div class="ig-st-top"><div class="ig-prog"><i></i><i></i></div><div><i class="ig-av"></i><b>' + u + '</b><small>2 小時</small>' + ICON.more + '</div></div><div class="ig-st-btm"><span>傳送訊息</span>' + ICON.heart + ICON.send + '</div>' : '') + '</div>';
     }
-    // grid
-    var g = '';
-    for (var i = 0; i < 9; i++) g += i === 0 && mode.crop ? '<div class="ig-tile me">' + mediaEl('', true) + '</div>' : '<div class="ig-tile" style="opacity:' + (0.35 + (i % 3) * 0.15) + '"></div>';
-    $('ig-grid').innerHTML = mode.crop ? g : '<p class="bf-save" style="grid-column:1/-1">限時動態不會出現在個人頁格狀。</p>' + g.replace(/class="ig-tile"/g, 'class="ig-tile" hidden');
-    var tile = $('ig-grid').querySelector('.me video'); if (tile) tile.currentTime = coverTime();
+    // profile view
+    var TONES = ['#12303F', '#7CC5E6', '#E3F1F8', '#2A7698', '#CFE2EA', '#F1F8FB', '#4E6B78', '#A4D8F1'];
+    var tiles = '';
+    for (var i = 0; i < 9; i++) {
+      if (i === 0 && mode.crop) { tiles += '<div class="ig-tile me">' + mediaEl('', true) + (mode.kind === 'reels' ? '<span class="ig-tile-ic">' + ICON.reel + '</span>' : '') + '</div>'; continue; }
+      var t = TONES[(i * 3) % TONES.length], t2 = TONES[(i * 5 + 2) % TONES.length];
+      tiles += '<div class="ig-tile ph" style="background:linear-gradient(' + (120 + i * 25) + 'deg,' + t + ',' + t2 + ')"><i style="' + ['left:18%;top:22%;width:38%;height:30%', 'left:50%;top:50%;width:30%;height:30%;border-radius:50%', 'left:14%;bottom:16%;width:72%;height:8%'][i % 3] + '"></i></div>';
+    }
+    var isStory = mode.kind === 'story';
+    $('ig-prof').innerHTML = '<div class="ig-top"><b>' + u + '</b><span>' + ICON.plus + ICON.menu + '</span></div>' +
+      '<div class="ig-ph-hd"><div class="ig-ph-av' + (isStory ? ' ring' : '') + '">' + (isStory && media ? mediaEl('ig-ring-m', true) : '') + '</div><dl><div><dt>128</dt><dd>貼文</dd></div><div><dt>2.4K</dt><dd>粉絲</dd></div><div><dt>186</dt><dd>追蹤中</dd></div></dl></div>' +
+      '<div class="ig-ph-bio"><b>' + u + '</b><i></i><i style="width:55%"></i></div>' +
+      '<div class="ig-ph-btn"><span>編輯個人檔案</span><span>分享個人檔案</span></div>' +
+      '<div class="ig-ph-hl">' + ['', '', '', ''].map(function (_, k) { return '<span><i style="background:' + TONES[k + 1] + '"></i><small></small></span>'; }).join('') + '</div>' +
+      '<div class="ig-ph-tabs"><span class="on">' + ICON.grid + '</span><span>' + ICON.reel + '</span><span>' + ICON.tag + '</span></div>' +
+      '<div class="ig-grid">' + tiles + '</div>' +
+      (isStory ? '<p class="ig-ph-note">限時動態會出現在大頭貼外圈，不會放進格狀。</p>' : '');
+    var tile = $('ig-prof').querySelector('.me video'); if (tile) tile.currentTime = coverTime();
     // info
     var info = '<div class="ig-spec"><div><dt>建議尺寸</dt><dd>' + mode.size + ' px</dd></div>';
     if (media) {
@@ -137,6 +155,6 @@
       [].forEach.call(document.querySelectorAll('.ig-m'), function (m) { m.style.objectPosition = px + '% ' + py + '%'; });
     });
   });
-  $('ig-cover').addEventListener('input', function () { var t = $('ig-grid').querySelector('.me video'); if (t) t.currentTime = coverTime(); });
+  $('ig-cover').addEventListener('input', function () { var t = $('ig-prof').querySelector('.me video'); if (t) t.currentTime = coverTime(); });
   render();
 })();
