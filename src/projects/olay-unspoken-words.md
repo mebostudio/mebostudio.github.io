@@ -1,5 +1,6 @@
 ---
 title: "OLAY：Unspoken Words"
+client: "OLAY"
 category: "Key Visual"
 cover: "/assets/images/projects/olay-unspoken-words.jpg"
 order: 8

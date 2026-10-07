@@ -1,10 +1,11 @@
 ---
 title: "IndieZ"
+client: "IndieZ"
 category: "Brand Identity"
 cover: "/assets/images/projects/indiez.jpg"
 order: 12
 hero: "/assets/images/projects/indiez/01.jpg"
-overview: "IndieZ is a new generation film and television company with comprehensive production experience and resources in Taiwan.\n\nThe visual identity highlights the letter “Z”, combined with film-strip elements to express IndieZ’s independent and diverse spirit, while opening a new chapter for Generation Z in film and television."
+brief: "IndieZ is a new generation film and television company with comprehensive production experience and resources in Taiwan.\n\nThe visual identity highlights the letter “Z”, combined with film-strip elements to express IndieZ’s independent and diverse spirit, while opening a new chapter for Generation Z in film and television."
 gallery:
   - image: "/assets/images/projects/indiez/02.jpg"
     size: "wide"

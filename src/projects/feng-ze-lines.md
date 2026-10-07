@@ -1,12 +1,13 @@
 ---
 title: "Feng Ze：Lines"
+client: "邱鋒澤"
 category: "Art Direction"
 cover: "/assets/images/projects/feng-ze-lines.jpg"
 order: 1
 year: "2025"
-disciplines: "Art Direction, Album Design, Visual Identity, Graphic"
+role: "Creative Direction, Art Direction"
 hero: "/assets/images/projects/lines-01.jpg"
-overview: "邱鋒澤專輯《lines》的創意導演與視覺統籌。"
+brief: "邱鋒澤專輯《lines》的創意導演與視覺統籌。"
 gallery:
   - image: "/assets/images/projects/lines-02.jpg"
     size: "wide"
