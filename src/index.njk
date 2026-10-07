@@ -23,18 +23,20 @@ view: front
 
 <div class="m-sheet" style="background: #FFFFFF; margin-top: -28px">
 
-<!-- STATEMENT -->
+<!-- STUDIO INTRODUCTION -->
 <section id="statement" style="max-width: 1440px; margin: 0 auto; padding: 180px clamp(20px, 4vw, 56px) 180px">
 <div class="rv" style="display: flex; flex-wrap: wrap; gap: 32px 40px">
 <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 11px; letter-spacing: 0.16em; color: #5F7C88">PHILOSOPHY</span>
-<span style="font-size: 12px; color: #4E6B78">理念</span>
+<span style="font-size: 11px; letter-spacing: 0.16em; color: #5F7C88">STUDIO</span>
+<span style="font-size: 12px; color: #4E6B78">關於 MEBO</span>
 </div>
-<div style="flex: 3 1 560px; min-width: 0; max-width: 820px">
-<p style="margin: 0; font-family: 'Noto Serif TC', serif; font-size: clamp(28px, 3vw, 44px); line-height: 1.7; letter-spacing: 0.12em">{{ home.statement_title }}</p>
-<p style="margin: 40px 0 0; font-family: 'Noto Serif TC', serif; font-size: 18px; line-height: 2.1; letter-spacing: 0.08em; color: #23404D">{{ home.statement_lead }}</p>
-<p style="margin: 20px 0 0; font-size: 14px; line-height: 2.3; color: #2F4B58">{{ home.statement_body }}</p>
-<a class="m-ul" href="/about/" style="display: inline-block; margin-top: 40px; font-size: 12px; letter-spacing: 0.14em; padding: 6px 0">About us →</a>
+<div style="flex: 3 1 560px; min-width: 0; max-width: 880px">
+<p style="margin: 0; font-size: clamp(24px, 2.6vw, 38px); font-weight: 300; line-height: 1.55; letter-spacing: 0.01em; color: #12303F">{{ home.intro_en }}</p>
+<p style="margin: 36px 0 0; font-family: 'Noto Serif TC', serif; font-size: clamp(16px, 1.4vw, 19px); line-height: 2.1; letter-spacing: 0.08em; color: #23404D">{{ home.intro_zh }}</p>
+<div style="margin-top: 48px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 32px">
+{%- if home.intro_note %}<span style="font-size: 12px; letter-spacing: 0.06em; color: #5F7C88">{{ home.intro_note }}</span>{% endif %}
+<a class="m-ul" href="/about/" style="font-size: 12px; letter-spacing: 0.14em; padding: 6px 0">About MEBO →</a>
+</div>
 </div>
 </div>
 </section>
