@@ -121,17 +121,22 @@ content:
       - { name: philosophy_body, label: ② 理念｜內文段落（每格一段）, type: text, list: true }
       - { name: founder_name, label: ③ 主理人｜名字, type: string }
       - { name: founder_role, label: ③ 主理人｜職稱, type: string }
-      - { name: founder_quote, label: ③ 主理人｜一句話觀點（大字）, type: text }
       - { name: founder_text, label: ③ 主理人｜介紹段落（每格一段）, type: text, list: true }
-      - name: founder_ways
-        label: ③ 主理人｜HOW I WORK 工作方式
+      - name: cofounded
+        label: ③ 主理人｜CO-FOUNDER
         type: object
         list: true
         fields:
-          - { name: title, label: 標題, type: string }
-          - { name: text, label: 說明, type: string }
-      - { name: founder_note_label, label: ③ 主理人｜觀察小框標題（例：最近在想的事）, type: string }
-      - { name: founder_note, label: ③ 主理人｜觀察小框內容（留空則不顯示）, type: text }
+          - { name: name, label: 名稱, type: string }
+          - { name: desc, label: 說明, type: string }
+          - { name: link, label: 連結（選填）, type: string }
+      - name: founder_selected
+        label: ③ 主理人｜SELECTED EXPERIENCE 部分經歷
+        type: object
+        list: true
+        fields:
+          - { name: name, label: 名稱, type: string }
+          - { name: desc, label: 說明, type: string }
       - name: experience
         label: ④ 精選經歷 SELECTED EXPERIENCE
         type: object
