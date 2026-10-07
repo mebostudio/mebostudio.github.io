@@ -1,5 +1,7 @@
 # 美泊視覺工作室 MEBO DESIGN STUDIO — 官方網站
 
+網址：https://mebostudio.github.io
+
 網站放在 GitHub Pages，每次內容有更新，約 1–2 分鐘後自動上線。
 
 ## 怎麼更新內容（不用寫程式）
