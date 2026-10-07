@@ -101,7 +101,16 @@ img { max-width: 100%; height: auto; }
 .m-jfilters .m-filter{padding:6px 0}
 [data-cats][hidden],.m-feat[hidden]{display:none!important}
 
-/* Article section headings: small wave mark instead of numbers */
-.m-article.m-body h2 { margin-top: 48px; display: flex; flex-direction: column; gap: 14px; }
-.m-article.m-body h2::before { content: ""; width: 34px; height: 8px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 8'%3E%3Cpath d='M1 4c4-4 6-4 8 0s4 4 8 0 4-4 8 0 4 4 8 0' fill='none' stroke='%237CC5E6' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 0 50% / contain; }
-.m-article.m-body mark { color: inherit; background: linear-gradient(transparent 58%, #BFE1F0 58%); padding: 0 2px; }
+/* Article reading hierarchy: title > section heading (wavy underline) > body > highlights */
+.m-article.m-body { gap: 0 !important; color: #2F4B58; }
+.m-article.m-body > * + * { margin-top: 22px; }
+.m-article.m-body > p:first-child { font-family: 'Noto Serif TC', serif; font-size: 17px; line-height: 2.2; color: #12303F; letter-spacing: 0.06em; }
+.m-article.m-body h2 { margin: 96px 0 0 !important; font-family: 'Noto Serif TC', serif; font-size: clamp(22px, 2.2vw, 27px); font-weight: 500; line-height: 2; letter-spacing: 0.1em; color: #12303F; text-decoration: underline wavy #7CC5E6; text-decoration-thickness: 1.5px; text-underline-offset: 12px; text-decoration-skip-ink: none; }
+.m-article.m-body h2 + * { margin-top: 40px !important; }
+.m-article.m-body h3 { margin-top: 56px !important; font-size: 18px; font-weight: 500; color: #12303F; }
+.m-article.m-body h3 + * { margin-top: 16px !important; }
+.m-article.m-body blockquote { margin: 48px 0 !important; padding: 26px 32px; border-left: 3px solid #7CC5E6; background: #F1F8FB; font-size: clamp(18px, 1.8vw, 21px); font-weight: 500; line-height: 2; color: #12303F; }
+.m-article.m-body blockquote + * { margin-top: 0 !important; }
+.m-article.m-body mark { color: #12303F; font-weight: 500; background-color: transparent; background-image: linear-gradient(transparent 56%, #C4E5F4 56%); padding: 0 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.m-article.m-body strong { color: #12303F; font-weight: 500; }
+@media (max-width: 640px) { .m-article.m-body h2 { margin-top: 72px !important; } .m-article.m-body blockquote { padding: 20px 22px; } }
