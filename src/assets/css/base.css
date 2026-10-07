@@ -1,0 +1,102 @@
+/*
+Theme Name: MEBO DESIGN STUDIO
+Theme URI: https://www.instagram.com/mebo.studio._o/
+Author: 美泊視覺工作室 MEBO DESIGN STUDIO
+Description: 美泊視覺工作室官方網站佈景主題。含作品集（可分類篩選）、設計筆記（部落格）、最新消息，以及首頁海浪主視覺與捲動動態。
+Version: 1.0.0
+Requires at least: 6.4
+Requires PHP: 7.4
+License: All rights reserved
+Text Domain: mebo
+*/
+
+/* Page styles live in assets/css/. This file only carries shared base rules. */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #FFFFFF; color: #12303F; }
+a { color: #12303F; }
+a:hover { color: #12303F; }
+img { max-width: 100%; height: auto; }
+.m-site { background: #FFFFFF; color: #12303F; font-family: 'Hanken Grotesk', 'Noto Sans TC', sans-serif; font-size: 14px; line-height: 2; letter-spacing: 0.04em; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+.screen-reader-text { border: 0; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute !important; width: 1px; word-wrap: normal !important; }
+.m-skip:focus { position: fixed; top: 8px; left: 8px; z-index: 100; background: #12303F; color: #fff; padding: 8px 16px; clip: auto; clip-path: none; width: auto; height: auto; margin: 0; }
+
+/* Header: current page marker, logged-in admin bar offset */
+.m-hd a[aria-current="page"] { border-bottom: 1px solid #12303F; }
+.admin-bar .m-hd { top: 32px; }
+@media screen and (max-width: 782px) { .admin-bar .m-hd { top: 46px; } }
+
+/* Mobile header: keep the nav on one scrollable line */
+@media (max-width: 640px) {
+  .m-hd nav { width: 100%; flex-wrap: nowrap !important; overflow-x: auto; gap: 0 22px !important; scrollbar-width: none; }
+  .m-hd nav::-webkit-scrollbar { display: none; }
+}
+
+/* Image placeholders when a post/project has no picture yet */
+.m-noimg { width: 100%; height: 100%; }
+
+/* Pagination */
+.m-pager { margin-top: 80px; display: flex; justify-content: center; gap: 24px; font-size: 12px; letter-spacing: 0.1em; }
+.m-pager .page-numbers { text-decoration: none; padding: 6px 4px 2px; color: #4E6B78; }
+.m-pager .page-numbers.current { color: #12303F; border-bottom: 1px solid #12303F; }
+
+/* ------------------------------------------------------------------
+   Editor content (projects & journal articles written in WordPress)
+   ------------------------------------------------------------------ */
+.m-body > * { margin: 0; }
+.m-body a { color: #12303F; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.m-body img { display: block; width: 100%; height: auto; }
+.m-body figure { margin: 0; }
+.m-body figcaption, .m-body .wp-element-caption { margin-top: 10px; font-size: 11px; letter-spacing: 0.1em; color: #4E6B78; text-align: left; }
+.m-body .wp-block-image img { background: #E3F1F8; }
+.m-body ul, .m-body ol { padding-left: 1.4em; }
+
+/* Journal article body */
+.m-article.m-body h2 { margin: 32px 0 0; font-family: 'Noto Serif TC', serif; font-size: 22px; font-weight: 400; line-height: 1.8; letter-spacing: 0.1em; color: #12303F; }
+.m-article.m-body h3 { margin: 16px 0 0; font-family: 'Noto Serif TC', serif; font-size: 18px; font-weight: 400; letter-spacing: 0.08em; color: #12303F; }
+.m-article.m-body figure, .m-article.m-body .wp-block-image { margin: 24px 0; }
+.m-article.m-body blockquote, .m-article.m-body .wp-block-quote { margin: 24px 0; padding: 8px 0 8px 28px; border-left: 2px solid #7CC5E6; font-family: 'Noto Serif TC', serif; font-size: 20px; line-height: 2; letter-spacing: 0.08em; color: #12303F; }
+.m-article.m-body blockquote p { margin: 0; }
+.m-article.m-body blockquote cite { display: block; margin-top: 8px; font-family: 'Hanken Grotesk', 'Noto Sans TC', sans-serif; font-size: 11px; font-style: normal; letter-spacing: 0.12em; color: #4E6B78; }
+.m-article.m-body .alignwide, .m-article.m-body .alignfull { width: min(1080px, calc(100vw - 40px)); max-width: none; margin-left: 50%; transform: translateX(-50%); }
+
+/* Project body: images full width, sections as label + text columns */
+.m-project.m-body { display: flex; flex-direction: column; gap: 40px; }
+.m-project.m-body p { font-size: 14px; line-height: 2.2; color: #2F4B58; }
+.m-project.m-body .wp-block-columns { gap: 40px; margin: 0; align-items: flex-end; }
+.m-project.m-body .wp-block-column > * + * { margin-top: 12px; }
+.m-project.m-body .wp-block-gallery { gap: 40px; }
+.m-project.m-body .wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) { width: calc(50% - 20px); }
+.m-project.m-body .m-hero img { aspect-ratio: 1400 / 788; object-fit: cover; }
+.m-sec { padding: 80px 0 !important; margin: 0 !important; }
+.m-sec, .m-sec > .wp-block-group__inner-container { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); column-gap: 40px; row-gap: 0; }
+.m-sec > .wp-block-group__inner-container { grid-column: 1 / -1; }
+.m-sec > * , .m-sec > .wp-block-group__inner-container > * { grid-column: 2; margin: 0 !important; max-width: 760px; }
+.m-sec > .wp-block-group__inner-container { max-width: none; }
+.m-sec > h2, .m-sec > h3, .m-sec > .wp-block-group__inner-container > h2, .m-sec > .wp-block-group__inner-container > h3 { grid-column: 1; grid-row: 1 / span 20; font-family: 'Hanken Grotesk', 'Noto Sans TC', sans-serif !important; font-size: 12px !important; font-weight: 500 !important; letter-spacing: 0.16em !important; line-height: 2 !important; color: #12303F; }
+.m-sec > * + :not(h2):not(h3), .m-sec > .wp-block-group__inner-container > * + :not(h2):not(h3) { margin-top: 16px !important; }
+.m-sec > h2 + *, .m-sec > .wp-block-group__inner-container > h2 + * { margin-top: 0 !important; }
+.m-sec p + p { font-size: 13px !important; line-height: 2 !important; color: #4E6B78 !important; }
+.m-sec.m-credits { border-top: 1px solid #CFE2EA; padding: 24px 0 60px !important; }
+.m-sec .wp-block-table { margin: 0; overflow-x: auto; }
+.m-sec table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.m-sec table td { padding: 10px 0; border: 0; border-bottom: 1px solid #E0EDF2; vertical-align: top; }
+.m-sec table td:first-child { width: 200px; padding-right: 40px; color: #4E6B78; letter-spacing: 0.08em; }
+.m-sec table thead { display: none; }
+@media (max-width: 720px) {
+  .m-sec { padding: 48px 0 !important; }
+  .m-sec, .m-sec > .wp-block-group__inner-container { grid-template-columns: minmax(0, 1fr); }
+  .m-sec > *, .m-sec .wp-block-group__inner-container > * { grid-column: 1 !important; grid-row: auto !important; }
+  .m-sec table td:first-child { width: 40%; padding-right: 16px; }
+  .m-project.m-body .wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) { width: 100%; }
+}
+
+/* Link underline that draws in on hover (shared by every page) */
+.m-ul { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .5s cubic-bezier(.2,.7,.2,1); }
+.m-ul:hover { background-size: 100% 1px; }
+
+/* Category filter buttons (projects + journal) */
+.m-filter{font:inherit;background:none;border:none;border-bottom:1px solid transparent;padding:8px 0;color:#4E6B78;cursor:pointer;letter-spacing:inherit;transition:color .3s,border-color .3s}
+.m-filter:hover{color:#12303F}
+.m-filter[aria-pressed="true"]{border-bottom-color:#12303F;color:#12303F}
+.m-jfilters .m-filter{padding:6px 0}
+[data-cats][hidden],.m-feat[hidden]{display:none!important}

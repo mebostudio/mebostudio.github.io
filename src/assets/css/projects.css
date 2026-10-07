@@ -1,0 +1,18 @@
+/* MEBO — project index (cards from the home page design) */
+.m-ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s cubic-bezier(.2,.7,.2,1)}
+.m-ul:hover{background-size:100% 1px}
+.m-card{animation:fi .7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.m-card .m-im{position:relative;overflow:hidden}
+.m-card .m-im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(142,208,238,0) 40%,rgba(61,143,179,.35) 100%);opacity:0;transition:opacity .6s}
+.m-card:hover .m-im::after{opacity:1}
+.m-card img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.m-card:hover img{transform:scale(1.05)}
+.m-card .vw{opacity:0;transform:translateY(10px);transition:opacity .45s,transform .45s;z-index:1}
+.m-card:hover .vw{opacity:1;transform:none}
+.m-on .m-ln{transition:transform 1.4s cubic-bezier(.2,.7,.2,1);transform-origin:left}
+.m-on .m-ln:not(.in){transform:scaleX(0)}
+.m-filter{font:inherit;background:none;border:none;border-bottom:1px solid transparent;padding:8px 0;color:#4E6B78;cursor:pointer;letter-spacing:.08em;transition:color .3s,border-color .3s}
+.m-filter:hover{color:#12303F}
+.m-filter[aria-pressed="true"]{border-bottom-color:#12303F;color:#12303F}
+.m-card[hidden]{display:none!important}
