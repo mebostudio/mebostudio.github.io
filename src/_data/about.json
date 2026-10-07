@@ -22,7 +22,7 @@
     {
       "en": "Art Direction",
       "zh": "藝術指導・製作統籌",
-      "desc": "從概念發展到製作執行的整體視覺指導，設定視覺語氣、協助決策，並確保產出的一致性。",
+      "desc": "從概念發展到製作執行的整體視覺指導，設定視覺語言、協助決策，並確保產出的一致性。",
       "points": [
         "主視覺・Campaign",
         "專輯・單曲設計",
@@ -49,12 +49,8 @@
       "value": "創意導演・藝術指導・品牌設計・講師"
     },
     {
-      "label": "PRACTICE",
-      "value": "2020 — Present"
-    },
-    {
       "label": "CO-FOUNDED",
-      "value": "美感研究所（2021）、fromapartment（2026）"
+      "value": "[美感研究所（2021）](https://www.instagram.com/artschooool/)、[fromapartment（2026）](https://fromapartment.com/)"
     },
     {
       "label": "TEACHING",
@@ -63,29 +59,34 @@
   ],
   "talks": [
     {
-      "year": "2024",
+      "year": "2025",
       "type": "LECTURE",
-      "text": "東吳大學 T-School 視覺設計美學班 — 第二屆課程講師"
+      "text": "東吳大學 T-School 視覺設計美學班 — 第二屆課程講師",
+      "link": ""
+    },
+    {
+      "year": "2025",
+      "type": "LECTURE",
+      "text": "東吳大學 T-School 視覺設計美學班 — 第一屆課程講師",
+      "link": ""
     },
     {
       "year": "2024",
       "type": "TALK",
-      "text": "嘉義大學「新生代設計師生存手冊」— 講座分享"
-    },
-    {
-      "year": "2023",
-      "type": "LECTURE",
-      "text": "東吳大學 T-School 視覺設計美學班 — 第一屆課程講師"
+      "text": "嘉義大學「新生代設計師生存手冊」— 講座分享",
+      "link": ""
     },
     {
       "year": "2023",
       "type": "COURSE",
-      "text": "Adobe 官方 Photoshop 內建課程 & YouTube — 設計課程教學"
+      "text": "Adobe 官方 Photoshop 內建課程 & YouTube — 設計課程教學",
+      "link": ""
     },
     {
       "year": "2023",
       "type": "INTERVIEW",
-      "text": "WACOM Club — 美感研究所「美得剛剛好才是最好！」"
+      "text": "WACOM Club — 美感研究所「美得剛剛好才是最好！」",
+      "link": "https://community.wacom.com/zh-tw/creative/%E3%80%8C%E7%BE%8E%E5%BE%97%E5%89%9B%E5%89%9B%E5%A5%BD%E6%89%8D%E6%98%AF%E6%9C%80%E5%A5%BD%EF%BC%81%E3%80%8D%E5%B0%88%E8%A8%AA%E7%BE%8E%E6%84%9F%E7%A0%94%E7%A9%B6%E6%89%80%E5%9C%98%E9%9A%8A%EF%BC%8D/"
     }
   ],
   "contact_1": "帶著想法來停泊，",
