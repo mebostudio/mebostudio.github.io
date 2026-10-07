@@ -1,0 +1,21 @@
+{%- set u = (page.url or "") | string -%}
+{%- set isHome = u == "/" -%}
+{%- set nav = [
+  ["Projects", "#projects" if isHome else "/#projects", u.startsWith("/projects/")],
+  ["About", "/about/", u == "/about/"],
+  ["Service", "/service/", u == "/service/"],
+  ["Journal", "/journal/", u.startsWith("/journal/")],
+  ["Contact", "#contact" if isHome else "/#contact", false]
+] -%}
+<header class="m-hd" style="background: rgba(255, 255, 255, 0.78); border-bottom: 1px solid rgba(18, 48, 63, 0.08)">
+<div style="max-width: 1440px; margin: 0 auto; padding: 20px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 40px">
+<a href="/" style="text-decoration: none; display: flex; align-items: baseline; gap: 14px" aria-label="MEBO DESIGN STUDIO 首頁">
+<span style="font-size: 16px; font-weight: 600; letter-spacing: 0.32em">MEBO</span>
+</a>
+<nav aria-label="主選單" style="display: flex; flex-wrap: wrap; gap: 0 32px; font-size: 12px; letter-spacing: 0.12em">
+{%- for item in nav %}
+<a class="m-ul" href="{{ item[1] }}"{% if item[2] %} aria-current="page"{% endif %} style="padding: 10px 0">{{ item[0] }}</a>
+{%- endfor %}
+</nav>
+</div>
+</header>

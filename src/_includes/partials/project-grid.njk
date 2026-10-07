@@ -1,0 +1,31 @@
+{#- PROJECTS heading + category filter + grid. Set headingTag before including. -#}
+{%- set tag = headingTag or "h2" -%}
+{%- set cats = collections.projects | orderedCats(categories.projects) -%}
+<div style="position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px 40px; padding-top: 24px; margin-bottom: 56px">
+<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
+<{{ tag }} style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">PROJECTS <span style="color: #5F7C88; font-weight: 400">／ 專案</span></{{ tag }}>
+{%- if cats.length > 1 %}
+<nav aria-label="專案分類" class="m-filters" data-grid=".m-pgrid" style="display: flex; flex-wrap: wrap; gap: 0 24px; font-size: 12px; letter-spacing: 0.08em">
+<button type="button" class="m-filter" data-filter="" aria-pressed="true">All</button>
+{%- for c in cats %}
+<button type="button" class="m-filter" data-filter="{{ c | slugcat }}" aria-pressed="false">{{ c }}</button>
+{%- endfor %}
+</nav>
+{%- endif %}
+</div>
+<div class="m-pgrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 72px 32px">
+{%- for p in collections.projects %}
+<a class="m-card" data-cur="view" data-cats="{{ p.data.category | slugcat }}" href="{{ p.url }}" style="text-decoration: none; display: flex; flex-direction: column; gap: 16px; animation-delay: {{ (loop.index0 % 3) * 0.08 }}s">
+<div class="m-im" style="aspect-ratio: 4 / 5; background: #E3F1F8">
+{%- if p.data.cover %}
+<img src="{{ p.data.cover }}" alt="{{ p.data.title }}" loading="{{ 'eager' if loop.index0 < 3 else 'lazy' }}" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block">
+{%- endif %}
+<span class="vw" style="position: absolute; left: 16px; bottom: 16px; font-size: 11px; letter-spacing: 0.18em; color: #12303F; background: rgba(255, 255, 255, 0.9); padding: 6px 12px">VIEW PROJECT →</span>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.06em">{{ p.data.title }}</span>
+<span style="flex: 0 0 auto; font-size: 11px; letter-spacing: 0.08em; color: #4E6B78">{{ p.data.category }}</span>
+</div>
+</a>
+{%- endfor %}
+</div>

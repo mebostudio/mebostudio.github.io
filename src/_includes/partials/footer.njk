@@ -1,0 +1,20 @@
+{%- set v = view or "post" -%}
+<footer style="background: #FFFFFF; color: #4E6B78; border-top: 1px solid #CFE2EA">
+{%- if v in ["front", "about", "service"] %}
+<div style="max-width: 1440px; margin: 0 auto; padding: 40px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px 40px; font-size: 11px; letter-spacing: 0.12em">
+<span style="display: flex; align-items: baseline; gap: 14px"><span style="font-size: 15px; font-weight: 600; letter-spacing: 0.32em; color: #12303F">MEBO</span><span>美泊視覺工作室</span></span>
+<nav aria-label="網站地圖" style="display: flex; flex-wrap: wrap; gap: 0 24px">
+<a class="m-ul" href="{{ '#projects' if page.url == '/' else '/#projects' }}" style="color: #4E6B78; padding: 6px 0">Projects</a>
+<a class="m-ul" href="/about/" style="color: #4E6B78; padding: 6px 0">About</a>
+<a class="m-ul" href="/service/" style="color: #4E6B78; padding: 6px 0">Service</a>
+<a class="m-ul" href="/journal/" style="color: #4E6B78; padding: 6px 0">Journal</a>
+</nav>
+<span>© {{ "" | year }} MEBO DESIGN STUDIO</span>
+</div>
+{%- else %}
+<div style="max-width: 1440px; margin: 0 auto; padding: 40px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 11px; letter-spacing: 0.1em; color: #4E6B78">
+<a href="/" style="text-decoration: none; font-size: 15px; font-weight: 600; letter-spacing: 0.32em; color: #12303F">MEBO</a>
+<span>美泊視覺工作室　/　© {{ "" | year }} MEBO DESIGN STUDIO</span>
+</div>
+{%- endif %}
+</footer>
