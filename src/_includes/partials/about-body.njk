@@ -12,21 +12,25 @@
 <span style="letter-spacing: 0.1em">Philosophy</span>
 <span style="color: #4E6B78">理念</span>
 </a>
+<a class="m-toc" href="#founder" style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(18, 48, 63, 0.1); text-decoration: none; font-size: 12px">
+<span style="letter-spacing: 0.1em">Founder</span>
+<span style="color: #4E6B78">主理人</span>
+</a>
+<a class="m-toc" href="#experience" style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(18, 48, 63, 0.1); text-decoration: none; font-size: 12px">
+<span style="letter-spacing: 0.1em">Experience</span>
+<span style="color: #4E6B78">經歷</span>
+</a>
 <a class="m-toc" href="#domain" style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(18, 48, 63, 0.1); text-decoration: none; font-size: 12px">
 <span style="letter-spacing: 0.1em">What We Do</span>
-<span style="color: #4E6B78">業務</span>
+<span style="color: #4E6B78">工作範圍</span>
 </a>
 <a class="m-toc" href="#process" style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(18, 48, 63, 0.1); text-decoration: none; font-size: 12px">
 <span style="letter-spacing: 0.1em">Process</span>
 <span style="color: #4E6B78">流程</span>
 </a>
-<a class="m-toc" href="#founder" style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(18, 48, 63, 0.1); text-decoration: none; font-size: 12px">
-<span style="letter-spacing: 0.1em">Founder</span>
-<span style="color: #4E6B78">創辦人</span>
-</a>
 <a class="m-toc" href="#talks" style="display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(18, 48, 63, 0.1); text-decoration: none; font-size: 12px">
-<span style="letter-spacing: 0.1em">Talks</span>
-<span style="color: #4E6B78">講座</span>
+<span style="letter-spacing: 0.1em">Education</span>
+<span style="color: #4E6B78">講座・教學</span>
 </a>
 </nav>
 </div>
@@ -51,13 +55,78 @@
 </div>
 </div>
 </section>
-<!-- 02 WHAT WE DO -->
+<!-- FOUNDER -->
+<section id="founder" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 160px">
+<div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
+<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">FOUNDER</h2>
+<span style="font-size: 12px; color: #4E6B78">主理人</span>
+</div>
+<div style="flex: 3 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-start">
+<div class="m-pt" style="flex: 1 1 260px; max-width: 380px; aspect-ratio: 4 / 5; background: #E3F1F8"><img src="{{ settings.portrait }}" alt="MEBO 主理人 {{ about.founder_name }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+<span style="font-size: clamp(24px, 2.4vw, 32px); font-weight: 300; letter-spacing: 0.08em">{{ about.founder_name }}</span>
+<span style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">{{ about.founder_role }}</span>
+</div>
+{%- if about.founder_quote %}
+<p style="margin: 8px 0 0; font-family: 'Noto Serif TC', serif; font-size: clamp(19px, 1.7vw, 23px); line-height: 1.9; letter-spacing: 0.08em; color: #12303F">{{ about.founder_quote }}</p>
+{%- endif %}
+{%- for para in about.founder_text %}
+<p style="margin: 0; font-size: 14px; line-height: 2.2; color: #2F4B58">{{ para }}</p>
+{%- endfor %}
+{%- if about.founder_ways.length %}
+<div style="margin-top: 12px">
+<div style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em; padding-bottom: 8px; border-bottom: 1px solid #12303F">HOW I WORK</div>
+{%- for w in about.founder_ways %}
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 14px 0; border-bottom: 1px solid #E0EDF2">
+<span style="flex: 0 0 140px; font-size: 13px; font-weight: 500; letter-spacing: 0.06em">{{ w.title }}</span>
+<span style="flex: 1 1 220px; min-width: 0; font-size: 13px; line-height: 2; color: #2F4B58">{{ w.text }}</span>
+</div>
+{%- endfor %}
+</div>
+{%- endif %}
+{%- if about.founder_note %}
+<div style="margin-top: 12px; padding: 20px 24px; background: #F3FAFD; border-left: 2px solid #7CC5E6">
+<div style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">{{ about.founder_note_label }}</div>
+<p style="margin: 8px 0 0; font-family: 'Noto Serif TC', serif; font-size: 16px; line-height: 2; letter-spacing: 0.06em; color: #23404D">{{ about.founder_note }}</p>
+</div>
+{%- endif %}
+<div style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 12px; letter-spacing: 0.08em">
+<a class="m-ul" href="{{ settings.instagram_url }}" target="_blank" rel="noopener" style="padding: 4px 0">Instagram {{ settings.instagram_handle }} ↗</a>
+<a class="m-ul" href="mailto:{{ settings.email }}" style="padding: 4px 0">{{ settings.email }}</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SELECTED EXPERIENCE -->
+<section id="experience" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 160px">
+<div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
+<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">SELECTED EXPERIENCE</h2>
+<span style="font-size: 12px; color: #4E6B78">精選經歷</span>
+</div>
+<ul style="flex: 3 1 560px; min-width: 0; margin: 0; padding: 0; list-style: none">
+{%- for e in about.experience %}
+<li class="m-row" style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-bottom: 1px solid #E0EDF2">
+<span style="flex: 0 0 64px; font-size: 12px; color: #4E6B78; letter-spacing: 0.08em">{{ e.year or "—" }}</span>
+<span style="flex: 0 0 140px; font-size: 11px; color: #2A7698; letter-spacing: 0.12em">{{ e.role }}</span>
+<span style="flex: 1 1 300px; min-width: 0; font-size: 13px">{% if e.link %}<a class="m-ul" href="{{ e.link }}"{% if e.link.startsWith("http") %} target="_blank" rel="noopener"{% endif %}>{{ e.text }}{% if e.link.startsWith("http") %} ↗{% else %} →{% endif %}</a>{% else %}{{ e.text }}{% endif %}</span>
+</li>
+{%- endfor %}
+</ul>
+</div>
+</section>
+<!-- WHAT WE DO -->
 <section id="domain" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 160px">
 <div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
 <div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
 <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
 <h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">WHAT WE DO</h2>
-<span style="font-size: 12px; color: #4E6B78">業務範圍</span>
+<span style="font-size: 12px; color: #4E6B78">工作範圍</span>
 </div>
 <div style="flex: 3 1 560px; min-width: 0">
 {%- for d in about.domain %}
@@ -78,45 +147,12 @@
 </div>
 </section>
 {% include "partials/process.njk" %}
-<!-- 04 FOUNDER -->
-<section id="founder" style="max-width: 1440px; margin: 0 auto; padding: 160px clamp(20px, 4vw, 56px) 160px">
-<div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
-<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
-<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
-<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">FOUNDER</h2>
-<span style="font-size: 12px; color: #4E6B78">創辦人／設計師</span>
-</div>
-<div style="flex: 3 1 560px; min-width: 0; display: flex; flex-wrap: wrap; gap: 40px 56px">
-<div class="m-pt" style="flex: 1 1 280px; max-width: 420px; aspect-ratio: 4 / 5; background: #E3F1F8"><img src="{{ settings.portrait }}" alt="美泊視覺工作室創辦人肖像" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 11px; color: #5F7C88; letter-spacing: 0.14em">FOUNDER / DESIGNER</span>
-<p style="margin: 0; font-size: 13px; line-height: 2.1; color: #2F4B58">{{ about.founder_bio }}</p>
-<dl style="margin: 20px 0 0; border-top: 1px solid #12303F">
-{%- for f in about.founder_facts %}
-<div style="display: flex; flex-wrap: wrap; gap: 0 32px; padding: 12px 0; border-bottom: 1px solid #E0EDF2; font-size: 12px">
-<dt style="flex: 0 0 120px; color: #4E6B78; letter-spacing: 0.1em">{{ f.label }}</dt>
-<dd style="margin: 0">{{ f.value | mdlinks | safe }}</dd>
-</div>
-{%- endfor %}
-<div style="display: flex; flex-wrap: wrap; gap: 0 32px; padding: 12px 0; border-bottom: 1px solid #E0EDF2; font-size: 12px">
-<dt style="flex: 0 0 120px; color: #4E6B78; letter-spacing: 0.1em">INSTAGRAM</dt>
-<dd style="margin: 0"><a class="m-ul" href="{{ settings.instagram_url }}" style="padding: 2px 0">{{ settings.instagram_handle }} ↗</a></dd>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 0 32px; padding: 12px 0; border-bottom: 1px solid #E0EDF2; font-size: 12px">
-<dt style="flex: 0 0 120px; color: #4E6B78; letter-spacing: 0.1em">E-MAIL</dt>
-<dd style="margin: 0"><a class="m-ul" href="mailto:{{ settings.email }}" style="padding: 2px 0">{{ settings.email }}</a></dd>
-</div>
-</dl>
-</div>
-</div>
-</div>
-</section>
-<!-- 05 TALKS & PRESS -->
+<!-- TALKS / EDUCATION -->
 <section id="talks" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 160px">
 <div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
 <div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
 <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
-<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">TALKS &amp; PRESS</h2>
+<h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">TALKS / EDUCATION</h2>
 <span style="font-size: 12px; color: #4E6B78">講座・教學・專訪</span>
 </div>
 <ul style="flex: 3 1 560px; min-width: 0; margin: 0; padding: 0; list-style: none">

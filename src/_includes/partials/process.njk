@@ -1,71 +1,30 @@
-<!-- 03 PROCESS CHART -->
-<section id="process" style="background: #FFFFFF; border-top: 1px solid #CFE2EA; border-bottom: 1px solid #CFE2EA">
-<div style="max-width: 1440px; margin: 0 auto; padding: 140px clamp(20px, 4vw, 56px) 160px">
-<div class="rv" style="display: flex; flex-wrap: wrap; gap: 24px 40px; margin-bottom: 72px">
+<!-- PROCESS (shared by About and Service) -->
+<section id="process" style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 160px">
+<div class="rv" style="position: relative; display: flex; flex-wrap: wrap; gap: 32px 40px; padding-top: 24px">
+<div class="m-ln" style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #CFE2EA"></div>
 <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px">
 <h2 style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.16em">PROCESS</h2>
 <span style="font-size: 12px; color: #4E6B78">合作流程</span>
 </div>
-<div style="flex: 3 1 560px; min-width: 0; max-width: 760px">
-<p style="margin: 0; font-size: 14px; line-height: 2.1; color: #2F4B58">{{ process.intro }}</p>
+<div style="flex: 3 1 560px; min-width: 0">
+{%- if process.intro %}
+<p style="margin: 0 0 56px; font-size: 14px; line-height: 2.2; color: #2F4B58">{{ process.intro }}</p>
+{%- endif %}
+<ol class="m-steps" style="position: relative; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 40px 24px">
+{%- for st in process.steps %}
+<li style="position: relative; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span class="m-node" aria-hidden="true">{{ loop.index | pad2 }}</span>
+{%- if not loop.last %}<span class="m-ln m-step-ln" aria-hidden="true" style="flex: 1; height: 1px; background: #12303F; opacity: .35"></span>{% endif %}
 </div>
+<div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+<span style="font-size: clamp(18px, 1.6vw, 22px); font-weight: 300; letter-spacing: 0.08em">{{ st.en }}</span>
+{%- if st.zh %}<span style="font-size: 12px; color: #4E6B78">{{ st.zh }}</span>{% endif %}
 </div>
-{%- for st in processView.steps %}<input class="psr" type="radio" name="ps" id="ps{{ st.n }}"{% if loop.first %} checked{% endif %}>{% endfor %}
-<div class="rv phw" style="display: flex; flex-wrap: wrap; gap: 56px 0">
-{%- for ph in processView.phases %}
-<div style="flex: {{ ph.steps.length }} 1 {{ 120 * ph.steps.length + 60 }}px; min-width: 0; padding-right: 8px">
-<div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px">
-<span style="font-size: 11px; letter-spacing: 0.16em; color: #4E6B78">PHASE {{ loop.index | pad2 }}</span>
-<span style="font-family: 'Noto Serif TC', serif; font-size: 20px; letter-spacing: 0.14em">{{ ph.name }}</span>
-<span style="font-size: 11px; letter-spacing: 0.16em; color: #2F4B58">{{ ph.label_en }}</span>
-</div>
-<p style="margin: 0 0 28px; font-size: 12px; color: #2F4B58">{{ ph.desc }}</p>
-<div style="position: relative">
-<div class="m-ln" style="position: absolute; top: 21px; left: 0; right: 0; height: 1px; background: #12303F"></div>
-<ol style="position: relative; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat({{ ph.steps.length }}, minmax(0, 1fr)); gap: 0 8px">
-{%- for st in ph.steps %}
-<li style="display: flex; flex-direction: column; align-items: flex-start; gap: 14px">
-<label class="m-node" for="ps{{ st.n }}" aria-label="步驟 {{ st.num }} {{ st.name }}">{{ st.num }}</label>
-<div style="display: flex; flex-direction: column">
-<span style="font-size: 14px; letter-spacing: 0.1em">{{ st.name }}</span>
-<span style="font-size: 10px; letter-spacing: 0.16em; color: #2F4B58">{{ st.en }}</span>
-</div>
+<p style="margin: 0; font-size: 13px; line-height: 2; color: #2F4B58; max-width: 260px">{{ st.desc }}</p>
 </li>
 {%- endfor %}
 </ol>
-{%- if ph.note %}
-<div style="margin-top: 16px; font-size: 11px; letter-spacing: 0.1em; color: #2F4B58">↺　{{ ph.note }}</div>
-{%- endif %}
-</div>
-</div>
-{%- endfor %}
-</div>
-<div class="pdw">
-{%- for st in processView.steps %}
-<div class="pnl pdet" data-s="{{ st.n }}" style="margin-top: 72px; background: #FFFFFF; border: 1px solid #CFE2EA; padding: clamp(24px, 3vw, 48px); display: flex; flex-wrap: wrap; gap: 32px 56px">
-<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'Noto Serif TC', serif; font-size: 64px; line-height: 1; color: #7CC5E6">{{ st.num }}</span>
-<span style="margin-top: 12px; font-size: 11px; letter-spacing: 0.16em; color: #4E6B78">PHASE {{ st.phase }}　{{ st.en }}</span>
-<span style="font-family: 'Noto Serif TC', serif; font-size: 26px; letter-spacing: 0.12em">{{ st.name }}</span>
-<p style="margin: 8px 0 0; font-size: 13px; line-height: 2.1; color: #2F4B58">{{ st.summary }}</p>
-</div>
-<div style="flex: 2 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 24px 40px; align-content: start">
-<div>
-<div style="font-size: 11px; letter-spacing: 0.14em; color: #4E6B78; padding-bottom: 10px; border-bottom: 1px solid #CFE2EA; margin-bottom: 12px">需要你準備　FROM YOU</div>
-<p style="margin: 0; font-size: 13px; line-height: 2.1">{{ st.from_you }}</p>
-</div>
-<div>
-<div style="font-size: 11px; letter-spacing: 0.14em; color: #4E6B78; padding-bottom: 10px; border-bottom: 1px solid #CFE2EA; margin-bottom: 12px">你會收到　YOU RECEIVE</div>
-<p style="margin: 0; font-size: 13px; line-height: 2.1">{{ st.you_receive }}</p>
-</div>
-</div>
-<div style="flex: 1 1 100%; display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid #CFE2EA; padding-top: 16px; font-size: 12px; letter-spacing: 0.12em">
-<label for="ps7" style="padding: 10px 0; cursor: pointer; color: #12303F">← PREV</label>
-<span style="align-self: center; color: #4E6B78">{{ st.num }} / {{ processView.total | pad2 }}</span>
-<label for="ps2" style="padding: 10px 0; cursor: pointer; color: #12303F">NEXT →</label>
-</div>
-</div>
-{%- endfor %}
 </div>
 </div>
 </section>
